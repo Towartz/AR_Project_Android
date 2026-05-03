@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: kelinci
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: kelinci
+  category: 1
+  title: Kelinci
+  subtitle: Huruf K - Kelinci
+  description: Kelinci adalah hewan kecil bertelinga panjang. Ia suka melompat dan
+    makan sayuran.
+  thumbnail: {fileID: 21300000, guid: 53e0682593c01a7d2a7a466247847868, type: 3}
+  referenceImageTexture: {fileID: 2800000, guid: 53e0682593c01a7d2a7a466247847868, type: 3}
+  prefab: {fileID: 4719110844728667562, guid: 69fa717cc661c4e409ae78b3caf5f93a, type: 3}
+  referenceImageName: K_Kelinci
+  targetWidthMeters: 0.075
+  objectType: Hewan
+  colorFocus: Putih, cokelat, atau abu-abu
+  fontTypeFocus: Telinga panjang, melompat, bulu lembut
+  nameAudioClip: {fileID: 0}
+  funFact: Kelinci menggerakkan hidungnya cepat saat mencium bau di sekitar.
+  spellOverride: Kelinci
+  quizQuestions:
+  - Apa nama objek pada kartu huruf K?
+  - Huruf awal dari Kelinci adalah?
+  - Kelinci termasuk kelompok apa?
+  - Warna yang cocok dengan Kelinci adalah?
+  - Ciri utama Kelinci adalah?
+  - Jika petunjuknya "Telinga panjang, melompat, bulu lembut", kartu apa yang harus
+    discan?
+  quizAnswers:
+  - Kelinci
+  - K
+  - Hewan
+  - Putih, cokelat, atau abu-abu
+  - Telinga panjang, melompat, bulu lembut
+  - Kelinci
+  quizWrongOptions:
+  - Lemon|Mangga|Nanas
+  - L|M|N
+  - Buah/Sayur|Benda Mati|Kendaraan
+  - Kuning|Hijau, kuning, atau oranye|Kuning dan hijau
+  - Oval, kulit kuning, rasa asam|Lonjong, berdaging tebal, berbiji besar|Kulit bersisik
+    tajam, mahkota daun, rasa manis asam
+  - Lemon|Mangga|Nanas

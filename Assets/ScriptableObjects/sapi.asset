@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: sapi
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: sapi
+  category: 1
+  title: Sapi
+  subtitle: Huruf S - Sapi
+  description: Sapi adalah hewan ternak besar yang makan rumput. Sapi dapat menghasilkan
+    susu.
+  thumbnail: {fileID: 21300000, guid: e35f835cd66b86c6193e6835853731a0, type: 3}
+  referenceImageTexture: {fileID: 2800000, guid: e35f835cd66b86c6193e6835853731a0, type: 3}
+  prefab: {fileID: 3321006753309192306, guid: fd850cfbd3ee7577e99d7213516d101b, type: 3}
+  referenceImageName: S_Sapi
+  targetWidthMeters: 0.075
+  objectType: Hewan
+  colorFocus: Putih, cokelat, atau hitam
+  fontTypeFocus: Badan besar, bertanduk, makan rumput
+  nameAudioClip: {fileID: 0}
+  funFact: Susu sapi sering diolah menjadi yogurt, keju, dan mentega.
+  spellOverride: Sapi
+  quizQuestions:
+  - Apa nama objek pada kartu huruf S?
+  - Huruf awal dari Sapi adalah?
+  - Sapi termasuk kelompok apa?
+  - Warna yang cocok dengan Sapi adalah?
+  - Ciri utama Sapi adalah?
+  - Jika petunjuknya "Badan besar, bertanduk, makan rumput", kartu apa yang harus
+    discan?
+  quizAnswers:
+  - Sapi
+  - S
+  - Hewan
+  - Putih, cokelat, atau hitam
+  - Badan besar, bertanduk, makan rumput
+  - Sapi
+  quizWrongOptions:
+  - Timun|Ular|Vampire Bat
+  - T|U|V
+  - Buah/Sayur|Benda Mati|Kendaraan
+  - Hijau|Beragam warna|Cokelat gelap
+  - Panjang, hijau, banyak air|Tubuh panjang, tidak berkaki, melata|Bersayap, aktif
+    malam, tidur menggantung
+  - Timun|Ular|Vampire Bat

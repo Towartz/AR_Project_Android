@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="J_Jagung" size="0.750000 1.149947" />
+    <ImageTarget name="I_Ikan" size="0.750000 1.149947" />
+    <ImageTarget name="H_Harimau" size="0.750000 1.149947" />
+    <ImageTarget name="G_Gajah" size="0.750000 1.149947" />
+    <ImageTarget name="F_Flamingo" size="0.750000 1.149947" />
+    <ImageTarget name="E_Elang" size="0.750000 1.149947" />
+    <ImageTarget name="D_Domba" size="0.750000 1.149947" />
+    <ImageTarget name="C_Ceri" size="0.750000 1.149947" />
+    <ImageTarget name="B_Buaya" size="0.750000 1.149947" />
+    <ImageTarget name="apple" size="0.750000 1.005891" />
+  </Tracking>
+</QCARConfig>

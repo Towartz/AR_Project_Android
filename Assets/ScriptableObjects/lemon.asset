@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: lemon
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: lemon
+  category: 0
+  title: Lemon
+  subtitle: Huruf L - Lemon
+  description: Lemon adalah buah sitrus berwarna kuning. Rasanya asam dan sering
+    dibuat minuman segar.
+  thumbnail: {fileID: 21300000, guid: 7dbe12597fa5ecb4cbb7c4ce6e50645a, type: 3}
+  referenceImageTexture: {fileID: 2800000, guid: 7dbe12597fa5ecb4cbb7c4ce6e50645a, type: 3}
+  prefab: {fileID: 6942974806543966567, guid: 0d1e393ccd496da5f9c877b1e290c43e, type: 3}
+  referenceImageName: L_Lemon
+  targetWidthMeters: 0.075
+  objectType: Buah/Sayur
+  colorFocus: Kuning
+  fontTypeFocus: Oval, kulit kuning, rasa asam
+  nameAudioClip: {fileID: 0}
+  funFact: Aroma lemon sering dipakai karena terasa segar.
+  spellOverride: Lemon
+  quizQuestions:
+  - Apa nama objek pada kartu huruf L?
+  - Huruf awal dari Lemon adalah?
+  - Lemon termasuk kelompok apa?
+  - Warna yang cocok dengan Lemon adalah?
+  - Ciri utama Lemon adalah?
+  - Jika petunjuknya "Oval, kulit kuning, rasa asam", kartu apa yang harus discan?
+  quizAnswers:
+  - Lemon
+  - L
+  - Buah/Sayur
+  - Kuning
+  - Oval, kulit kuning, rasa asam
+  - Lemon
+  quizWrongOptions:
+  - Mangga|Nanas|Orang Utan
+  - M|N|O
+  - Hewan|Benda Mati|Kendaraan
+  - Hijau, kuning, atau oranye|Kuning dan hijau|Cokelat kemerahan
+  - Lonjong, berdaging tebal, berbiji besar|Kulit bersisik tajam, mahkota daun, rasa
+    manis asam|Lengan panjang, berbulu merah kecokelatan, pintar memanjat
+  - Mangga|Nanas|Orang Utan

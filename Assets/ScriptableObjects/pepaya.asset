@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: pepaya
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: pepaya
+  category: 0
+  title: Pepaya
+  subtitle: Huruf P - Pepaya
+  description: Pepaya adalah buah lonjong yang dagingnya oranye saat matang. Di bagian
+    tengahnya ada banyak biji kecil.
+  thumbnail: {fileID: 21300000, guid: 9fc8684ad501e04d594223811d94cf9b, type: 3}
+  referenceImageTexture: {fileID: 2800000, guid: 9fc8684ad501e04d594223811d94cf9b, type: 3}
+  prefab: {fileID: 1347176956760712186, guid: ca9aeef052b547fe39116b82173168d8, type: 3}
+  referenceImageName: P_Pepaya
+  targetWidthMeters: 0.075
+  objectType: Buah/Sayur
+  colorFocus: Hijau atau oranye
+  fontTypeFocus: Lonjong, daging oranye, banyak biji kecil
+  nameAudioClip: {fileID: 0}
+  funFact: Pepaya matang terasa manis dan lembut.
+  spellOverride: Pepaya
+  quizQuestions:
+  - Apa nama objek pada kartu huruf P?
+  - Huruf awal dari Pepaya adalah?
+  - Pepaya termasuk kelompok apa?
+  - Warna yang cocok dengan Pepaya adalah?
+  - Ciri utama Pepaya adalah?
+  - Jika petunjuknya "Lonjong, daging oranye, banyak biji kecil", kartu apa yang
+    harus discan?
+  quizAnswers:
+  - Pepaya
+  - P
+  - Buah/Sayur
+  - Hijau atau oranye
+  - Lonjong, daging oranye, banyak biji kecil
+  - Pepaya
+  quizWrongOptions:
+  - Quail|Rambutan|Sapi
+  - Q|R|S
+  - Hewan|Benda Mati|Kendaraan
+  - Cokelat bercorak|Merah atau kuning|Putih, cokelat, atau hitam
+  - Burung kecil, tubuh berbintik, kaki pendek|Kulit berambut, daging putih, rasa
+    manis|Badan besar, bertanduk, makan rumput
+  - Quail|Rambutan|Sapi

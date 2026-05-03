@@ -1,0 +1,56 @@
+# Unity generated folders
+/Library/
+/Temp/
+/Obj/
+/Build/
+/Builds/
+/Logs/
+/MemoryCaptures/
+/Recordings/
+/UserSettings/
+/test_BackUpThisFolder_ButDontShipItWithYourGame/
+/Backup_PreRefactor/
+/build/
+
+# Local/editor-only folders
+/.utmp/
+/.agents/
+/.codex
+/.vscode/
+
+# Generated IDE files
+*.csproj
+*.sln
+*.slnx
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Build output
+*.apk
+*.aab
+*.unitypackage
+
+# Heavy local Unity packages. Vuforia package must be restored manually.
+/Packages/*.tgz
+/Packages/*.tgz.meta
+/Assets/Editor/Migration/*.tgz
+/Assets/Editor/Migration/*.tgz.meta
+
+# Temporary backup assets, not required for the runnable project.
+/Assets/TTS_SYNTH_BACKUP_20260430/
+/Assets/TTS_CASE_DUPLICATE_BACKUP_20260430/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Crash/debug dumps
+*.stackdump
+*.log

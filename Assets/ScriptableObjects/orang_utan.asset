@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: orang_utan
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: orang_utan
+  category: 1
+  title: Orang Utan
+  subtitle: Huruf O - Orang Utan
+  description: Orang utan adalah primata besar yang hidup di hutan. Lengannya panjang
+    dan kuat untuk bergelantungan.
+  thumbnail: {fileID: 21300000, guid: 532fc60764ada8b2eaf223a355a11332, type: 3}
+  referenceImageTexture: {fileID: 2800000, guid: 532fc60764ada8b2eaf223a355a11332, type: 3}
+  prefab: {fileID: 7884142304457875757, guid: 82004a9e568f7bb5ab35e6b2cef43a40, type: 3}
+  referenceImageName: O_OrangUtan
+  targetWidthMeters: 0.075
+  objectType: Hewan
+  colorFocus: Cokelat kemerahan
+  fontTypeFocus: Lengan panjang, berbulu merah kecokelatan, pintar memanjat
+  nameAudioClip: {fileID: 0}
+  funFact: Nama orang utan berarti manusia hutan.
+  spellOverride: Orang Utan
+  quizQuestions:
+  - Apa nama objek pada kartu huruf O?
+  - Huruf awal dari Orang Utan adalah?
+  - Orang Utan termasuk kelompok apa?
+  - Warna yang cocok dengan Orang Utan adalah?
+  - Ciri utama Orang Utan adalah?
+  - Jika petunjuknya "Lengan panjang, berbulu merah kecokelatan, pintar memanjat",
+    kartu apa yang harus discan?
+  quizAnswers:
+  - Orang Utan
+  - O
+  - Hewan
+  - Cokelat kemerahan
+  - Lengan panjang, berbulu merah kecokelatan, pintar memanjat
+  - Orang Utan
+  quizWrongOptions:
+  - Pepaya|Quail|Rambutan
+  - P|Q|R
+  - Buah/Sayur|Benda Mati|Kendaraan
+  - Hijau atau oranye|Cokelat bercorak|Merah atau kuning
+  - Lonjong, daging oranye, banyak biji kecil|Burung kecil, tubuh berbintik, kaki
+    pendek|Kulit berambut, daging putih, rasa manis
+  - Pepaya|Quail|Rambutan

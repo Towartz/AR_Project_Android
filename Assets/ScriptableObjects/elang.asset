@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: elang
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: elang
+  category: 1
+  title: Elang
+  subtitle: Huruf E - Elang
+  description: Elang adalah burung pemangsa yang dapat terbang tinggi. Matanya tajam
+    untuk melihat mangsa dari jauh.
+  thumbnail: {fileID: 21300000, guid: ee5b5fe7054df1361ba92989457697c3, type: 3}
+  referenceImageTexture: {fileID: 2800000, guid: ee5b5fe7054df1361ba92989457697c3, type: 3}
+  prefab: {fileID: 4350208479476478958, guid: 4132ecc4d1f1386d2bc25f95c0bb9663, type: 3}
+  referenceImageName: E_Elang
+  targetWidthMeters: 0.075
+  objectType: Hewan
+  colorFocus: Cokelat, putih, atau hitam
+  fontTypeFocus: Sayap lebar, paruh bengkok, cakar tajam
+  nameAudioClip: {fileID: 0}
+  funFact: Penglihatan elang sangat kuat sehingga ia bisa melihat gerakan kecil dari
+    ketinggian.
+  spellOverride: Elang
+  quizQuestions:
+  - Apa nama objek pada kartu huruf E?
+  - Huruf awal dari Elang adalah?
+  - Elang termasuk kelompok apa?
+  - Warna yang cocok dengan Elang adalah?
+  - Ciri utama Elang adalah?
+  - Jika petunjuknya "Sayap lebar, paruh bengkok, cakar tajam", kartu apa yang harus
+    discan?
+  quizAnswers:
+  - Elang
+  - E
+  - Hewan
+  - Cokelat, putih, atau hitam
+  - Sayap lebar, paruh bengkok, cakar tajam
+  - Elang
+  quizWrongOptions:
+  - Flamingo|Gajah|Harimau
+  - F|G|H
+  - Buah/Sayur|Benda Mati|Kendaraan
+  - Merah muda|Abu-abu|Oranye dengan belang hitam
+  - Leher panjang, kaki panjang, berdiri di air|Badan besar, belalai panjang, telinga
+    lebar|Belang hitam, cakar tajam, tubuh kuat
+  - Flamingo|Gajah|Harimau

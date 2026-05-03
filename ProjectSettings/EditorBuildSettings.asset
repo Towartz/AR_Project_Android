@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SplashScene.unity
+    guid: 78c52589c2b0d4ae1929be5fc3a2d4b0
+  - enabled: 1
+    path: Assets/Scenes/MainMenuScene.unity
+    guid: 70834d09b6964e4f79b2a010f7b5f092
+  - enabled: 1
+    path: Assets/Scenes/GuideScene.unity
+    guid: b533061aba9d5e409af3affd74461390
+  - enabled: 1
+    path: Assets/Scenes/MaterialSelectScene.unity
+    guid: 64e93dbff285f82cfa2b79f4fee85f2a
+  - enabled: 1
+    path: Assets/Scenes/ARScanScene.unity
+    guid: b61a5c8df065eda948f4684d0e3858b0
+  - enabled: 1
+    path: Assets/Scenes/CollectionScene.unity
+    guid: 6ca9b4325b6a86577b3faf6eb218ad62
+  - enabled: 1
+    path: Assets/Scenes/QuizHuntScene.unity
+    guid: a3e7e2cfe6efb6582bf0de5154f767ca
+  - enabled: 1
+    path: Assets/Scenes/ResultScene.unity
+    guid: 2aeef76bb5ef22c54b64af9b7d35c590
+  - enabled: 1
+    path: Assets/Scenes/AboutScene.unity
+    guid: 4775fbdc274d8ed40950a8c3f132920a
+  m_configObjects:
+    com.unity.xr.magicleap.magic_leap_settings: {fileID: 11400000, guid: 0b53a025a635a4393ba0b49822242280, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 3fd4fc0127790db4bae83f7b77da8d45, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: b07c4ba7650be4c25b3d0c497e7e2bb8, type: 2}

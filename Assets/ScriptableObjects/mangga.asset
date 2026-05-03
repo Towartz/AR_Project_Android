@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: mangga
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: mangga
+  category: 0
+  title: Mangga
+  subtitle: Huruf M - Mangga
+  description: Mangga adalah buah tropis yang rasanya manis saat matang. Daging buahnya
+    tebal dan berwarna kuning oranye.
+  thumbnail: {fileID: 21300000, guid: 7fc0bc80ed1171dd0b2b57b669bdce8a, type: 3}
+  referenceImageTexture: {fileID: 2800000, guid: 7fc0bc80ed1171dd0b2b57b669bdce8a, type: 3}
+  prefab: {fileID: 7162539346798089815, guid: 3283950d18e13bd60a0f198ba3e89170, type: 3}
+  referenceImageName: M_Mangga
+  targetWidthMeters: 0.075
+  objectType: Buah/Sayur
+  colorFocus: Hijau, kuning, atau oranye
+  fontTypeFocus: Lonjong, berdaging tebal, berbiji besar
+  nameAudioClip: {fileID: 0}
+  funFact: Mangga muda biasanya terasa lebih asam daripada mangga matang.
+  spellOverride: Mangga
+  quizQuestions:
+  - Apa nama objek pada kartu huruf M?
+  - Huruf awal dari Mangga adalah?
+  - Mangga termasuk kelompok apa?
+  - Warna yang cocok dengan Mangga adalah?
+  - Ciri utama Mangga adalah?
+  - Jika petunjuknya "Lonjong, berdaging tebal, berbiji besar", kartu apa yang harus
+    discan?
+  quizAnswers:
+  - Mangga
+  - M
+  - Buah/Sayur
+  - Hijau, kuning, atau oranye
+  - Lonjong, berdaging tebal, berbiji besar
+  - Mangga
+  quizWrongOptions:
+  - Nanas|Orang Utan|Pepaya
+  - N|O|P
+  - Hewan|Benda Mati|Kendaraan
+  - Kuning dan hijau|Cokelat kemerahan|Hijau atau oranye
+  - Kulit bersisik tajam, mahkota daun, rasa manis asam|Lengan panjang, berbulu merah
+    kecokelatan, pintar memanjat|Lonjong, daging oranye, banyak biji kecil
+  - Nanas|Orang Utan|Pepaya

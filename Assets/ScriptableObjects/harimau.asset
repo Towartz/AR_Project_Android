@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: harimau
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: harimau
+  category: 1
+  title: Harimau
+  subtitle: Huruf H - Harimau
+  description: Harimau adalah kucing besar dengan belang hitam. Ia hidup sebagai
+    pemburu di hutan.
+  thumbnail: {fileID: 21300000, guid: ca6121d663acd15b8bcbe4e8d1fc69b2, type: 3}
+  referenceImageTexture: {fileID: 2800000, guid: ca6121d663acd15b8bcbe4e8d1fc69b2, type: 3}
+  prefab: {fileID: 6059792370857400625, guid: 5853afb7200b94001b62596128bd9bad, type: 3}
+  referenceImageName: H_Harimau
+  targetWidthMeters: 0.075
+  objectType: Hewan
+  colorFocus: Oranye dengan belang hitam
+  fontTypeFocus: Belang hitam, cakar tajam, tubuh kuat
+  nameAudioClip: {fileID: 0}
+  funFact: Setiap harimau punya pola belang yang berbeda seperti sidik jari.
+  spellOverride: Harimau
+  quizQuestions:
+  - Apa nama objek pada kartu huruf H?
+  - Huruf awal dari Harimau adalah?
+  - Harimau termasuk kelompok apa?
+  - Warna yang cocok dengan Harimau adalah?
+  - Ciri utama Harimau adalah?
+  - Jika petunjuknya "Belang hitam, cakar tajam, tubuh kuat", kartu apa yang harus
+    discan?
+  quizAnswers:
+  - Harimau
+  - H
+  - Hewan
+  - Oranye dengan belang hitam
+  - Belang hitam, cakar tajam, tubuh kuat
+  - Harimau
+  quizWrongOptions:
+  - Ikan|Jagung|Kelinci
+  - I|J|K
+  - Buah/Sayur|Benda Mati|Kendaraan
+  - Beragam warna|Kuning|Putih, cokelat, atau abu-abu
+  - Bersirip, bersisik, hidup di air|Biji berjajar, tongkol panjang, berdaun hijau|Telinga
+    panjang, melompat, bulu lembut
+  - Ikan|Jagung|Kelinci

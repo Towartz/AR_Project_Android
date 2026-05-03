@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: color_secondary
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: color_secondary
+  category: 0
+  title: Jeruk Cerah
+  subtitle: Buah bulat dengan kulit tebal
+  description: Jeruk cerah membantu anak mengenali buah berbentuk bulat dengan kulit
+    yang agak tebal. Aromanya segar dan warna kulitnya mudah dikenali.
+  thumbnail: {fileID: 21300000, guid: bebebfcc6d3a0d6b5a4bd759e2734042, type: 3}
+  referenceImageTexture: {fileID: 2800000, guid: bebebfcc6d3a0d6b5a4bd759e2734042, type: 3}
+  prefab: {fileID: 5897863577523479443, guid: ccfa8d2587c0b677499ab6da58c38da9, type: 3}
+  referenceImageName: color_secondary
+  targetWidthMeters: 0.12
+  objectType: Jeruk cerah
+  colorFocus: Oranye dan hijau daun
+  fontTypeFocus: Bulat dengan kulit tebal
+  nameAudioClip: {fileID: 0}
+  funFact: 
+  spellOverride: 
+  quizQuestions: []
+  quizAnswers: []
+  quizWrongOptions: []

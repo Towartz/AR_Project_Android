@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: color_primary
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: color_primary
+  category: 1
+  title: Kupu-kupu Ceria
+  subtitle: Serangga kecil dengan sayap lebar
+  description: Kupu-kupu ceria menampilkan bentuk sayap yang simetris dan menarik.
+    Hewan ini mudah dipakai untuk mengenalkan bagian tubuh serangga.
+  thumbnail: {fileID: 21300000, guid: 4a2edd773c6434e0b84d9d98bdd64ec4, type: 3}
+  referenceImageTexture: {fileID: 2800000, guid: 4a2edd773c6434e0b84d9d98bdd64ec4, type: 3}
+  prefab: {fileID: 2748524742670752802, guid: bc9c779531341871b8ec7796fdeb278f, type: 3}
+  referenceImageName: color_primary
+  targetWidthMeters: 0.12
+  objectType: Kupu-kupu ceria
+  colorFocus: Merah, kuning, biru
+  fontTypeFocus: Sayap simetris dan antena tipis
+  nameAudioClip: {fileID: 0}
+  funFact: 
+  spellOverride: 
+  quizQuestions: []
+  quizAnswers: []
+  quizWrongOptions: []

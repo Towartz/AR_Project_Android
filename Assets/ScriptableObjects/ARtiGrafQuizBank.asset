@@ -1,0 +1,1057 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c364397b1f6a6de678e51419d4b61083, type: 3}
+  m_Name: ARtiGrafQuizBank
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.QuizQuestionBank
+  questions:
+  - question: Kartu huruf A berisi objek apa?
+    options:
+    - Apel
+    - Buaya
+    - Ceri
+    - Domba
+    correctIndex: 0
+    explanation: Kartu huruf A adalah Apel.
+  - question: Huruf awal dari Apel adalah?
+    options:
+    - A
+    - B
+    - C
+    - D
+    correctIndex: 0
+    explanation: Apel dimulai dari huruf A.
+  - question: Apel termasuk kelompok apa?
+    options:
+    - Buah/Sayur
+    - Hewan
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Apel termasuk kelompok Buah/Sayur.
+  - question: Ciri yang cocok dengan Apel adalah?
+    options:
+    - Bulat, bertangkai, kulit halus
+    - Bersisik, tubuh panjang, gigi tajam
+    - Kecil, bulat, bertangkai
+    - Bulu tebal, berkaki empat, makan rumput
+    correctIndex: 0
+    explanation: 'Ciri utama Apel: Bulat, bertangkai, kulit halus.'
+  - question: Warna yang cocok dengan Apel adalah?
+    options:
+    - Merah, hijau, atau kuning
+    - Hijau tua atau cokelat
+    - Merah
+    - Putih atau krem
+    correctIndex: 0
+    explanation: 'Warna/pengenal Apel: Merah, hijau, atau kuning.'
+  - question: Kartu huruf B berisi objek apa?
+    options:
+    - Buaya
+    - Ceri
+    - Domba
+    - Elang
+    correctIndex: 0
+    explanation: Kartu huruf B adalah Buaya.
+  - question: Huruf awal dari Buaya adalah?
+    options:
+    - B
+    - C
+    - D
+    - E
+    correctIndex: 0
+    explanation: Buaya dimulai dari huruf B.
+  - question: Buaya termasuk kelompok apa?
+    options:
+    - Hewan
+    - Buah/Sayur
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Buaya termasuk kelompok Hewan.
+  - question: Ciri yang cocok dengan Buaya adalah?
+    options:
+    - Bersisik, tubuh panjang, gigi tajam
+    - Kecil, bulat, bertangkai
+    - Bulu tebal, berkaki empat, makan rumput
+    - Sayap lebar, paruh bengkok, cakar tajam
+    correctIndex: 0
+    explanation: 'Ciri utama Buaya: Bersisik, tubuh panjang, gigi tajam.'
+  - question: Warna yang cocok dengan Buaya adalah?
+    options:
+    - Hijau tua atau cokelat
+    - Merah
+    - Putih atau krem
+    - Cokelat, putih, atau hitam
+    correctIndex: 0
+    explanation: 'Warna/pengenal Buaya: Hijau tua atau cokelat.'
+  - question: Kartu huruf C berisi objek apa?
+    options:
+    - Ceri
+    - Domba
+    - Elang
+    - Flamingo
+    correctIndex: 0
+    explanation: Kartu huruf C adalah Ceri.
+  - question: Huruf awal dari Ceri adalah?
+    options:
+    - C
+    - D
+    - E
+    - F
+    correctIndex: 0
+    explanation: Ceri dimulai dari huruf C.
+  - question: Ceri termasuk kelompok apa?
+    options:
+    - Buah/Sayur
+    - Hewan
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Ceri termasuk kelompok Buah/Sayur.
+  - question: Ciri yang cocok dengan Ceri adalah?
+    options:
+    - Kecil, bulat, bertangkai
+    - Bulu tebal, berkaki empat, makan rumput
+    - Sayap lebar, paruh bengkok, cakar tajam
+    - Leher panjang, kaki panjang, berdiri di air
+    correctIndex: 0
+    explanation: 'Ciri utama Ceri: Kecil, bulat, bertangkai.'
+  - question: Warna yang cocok dengan Ceri adalah?
+    options:
+    - Merah
+    - Putih atau krem
+    - Cokelat, putih, atau hitam
+    - Merah muda
+    correctIndex: 0
+    explanation: 'Warna/pengenal Ceri: Merah.'
+  - question: Kartu huruf D berisi objek apa?
+    options:
+    - Domba
+    - Elang
+    - Flamingo
+    - Gajah
+    correctIndex: 0
+    explanation: Kartu huruf D adalah Domba.
+  - question: Huruf awal dari Domba adalah?
+    options:
+    - D
+    - E
+    - F
+    - G
+    correctIndex: 0
+    explanation: Domba dimulai dari huruf D.
+  - question: Domba termasuk kelompok apa?
+    options:
+    - Hewan
+    - Buah/Sayur
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Domba termasuk kelompok Hewan.
+  - question: Ciri yang cocok dengan Domba adalah?
+    options:
+    - Bulu tebal, berkaki empat, makan rumput
+    - Sayap lebar, paruh bengkok, cakar tajam
+    - Leher panjang, kaki panjang, berdiri di air
+    - Badan besar, belalai panjang, telinga lebar
+    correctIndex: 0
+    explanation: 'Ciri utama Domba: Bulu tebal, berkaki empat, makan rumput.'
+  - question: Warna yang cocok dengan Domba adalah?
+    options:
+    - Putih atau krem
+    - Cokelat, putih, atau hitam
+    - Merah muda
+    - Abu-abu
+    correctIndex: 0
+    explanation: 'Warna/pengenal Domba: Putih atau krem.'
+  - question: Kartu huruf E berisi objek apa?
+    options:
+    - Elang
+    - Flamingo
+    - Gajah
+    - Harimau
+    correctIndex: 0
+    explanation: Kartu huruf E adalah Elang.
+  - question: Huruf awal dari Elang adalah?
+    options:
+    - E
+    - F
+    - G
+    - H
+    correctIndex: 0
+    explanation: Elang dimulai dari huruf E.
+  - question: Elang termasuk kelompok apa?
+    options:
+    - Hewan
+    - Buah/Sayur
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Elang termasuk kelompok Hewan.
+  - question: Ciri yang cocok dengan Elang adalah?
+    options:
+    - Sayap lebar, paruh bengkok, cakar tajam
+    - Leher panjang, kaki panjang, berdiri di air
+    - Badan besar, belalai panjang, telinga lebar
+    - Belang hitam, cakar tajam, tubuh kuat
+    correctIndex: 0
+    explanation: 'Ciri utama Elang: Sayap lebar, paruh bengkok, cakar tajam.'
+  - question: Warna yang cocok dengan Elang adalah?
+    options:
+    - Cokelat, putih, atau hitam
+    - Merah muda
+    - Abu-abu
+    - Oranye dengan belang hitam
+    correctIndex: 0
+    explanation: 'Warna/pengenal Elang: Cokelat, putih, atau hitam.'
+  - question: Kartu huruf F berisi objek apa?
+    options:
+    - Flamingo
+    - Gajah
+    - Harimau
+    - Ikan
+    correctIndex: 0
+    explanation: Kartu huruf F adalah Flamingo.
+  - question: Huruf awal dari Flamingo adalah?
+    options:
+    - F
+    - G
+    - H
+    - I
+    correctIndex: 0
+    explanation: Flamingo dimulai dari huruf F.
+  - question: Flamingo termasuk kelompok apa?
+    options:
+    - Hewan
+    - Buah/Sayur
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Flamingo termasuk kelompok Hewan.
+  - question: Ciri yang cocok dengan Flamingo adalah?
+    options:
+    - Leher panjang, kaki panjang, berdiri di air
+    - Badan besar, belalai panjang, telinga lebar
+    - Belang hitam, cakar tajam, tubuh kuat
+    - Bersirip, bersisik, hidup di air
+    correctIndex: 0
+    explanation: 'Ciri utama Flamingo: Leher panjang, kaki panjang, berdiri di air.'
+  - question: Warna yang cocok dengan Flamingo adalah?
+    options:
+    - Merah muda
+    - Abu-abu
+    - Oranye dengan belang hitam
+    - Beragam warna
+    correctIndex: 0
+    explanation: 'Warna/pengenal Flamingo: Merah muda.'
+  - question: Kartu huruf G berisi objek apa?
+    options:
+    - Gajah
+    - Harimau
+    - Ikan
+    - Jagung
+    correctIndex: 0
+    explanation: Kartu huruf G adalah Gajah.
+  - question: Huruf awal dari Gajah adalah?
+    options:
+    - G
+    - H
+    - I
+    - J
+    correctIndex: 0
+    explanation: Gajah dimulai dari huruf G.
+  - question: Gajah termasuk kelompok apa?
+    options:
+    - Hewan
+    - Buah/Sayur
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Gajah termasuk kelompok Hewan.
+  - question: Ciri yang cocok dengan Gajah adalah?
+    options:
+    - Badan besar, belalai panjang, telinga lebar
+    - Belang hitam, cakar tajam, tubuh kuat
+    - Bersirip, bersisik, hidup di air
+    - Biji berjajar, tongkol panjang, berdaun hijau
+    correctIndex: 0
+    explanation: 'Ciri utama Gajah: Badan besar, belalai panjang, telinga lebar.'
+  - question: Warna yang cocok dengan Gajah adalah?
+    options:
+    - Abu-abu
+    - Oranye dengan belang hitam
+    - Beragam warna
+    - Kuning
+    correctIndex: 0
+    explanation: 'Warna/pengenal Gajah: Abu-abu.'
+  - question: Kartu huruf H berisi objek apa?
+    options:
+    - Harimau
+    - Ikan
+    - Jagung
+    - Kelinci
+    correctIndex: 0
+    explanation: Kartu huruf H adalah Harimau.
+  - question: Huruf awal dari Harimau adalah?
+    options:
+    - H
+    - I
+    - J
+    - K
+    correctIndex: 0
+    explanation: Harimau dimulai dari huruf H.
+  - question: Harimau termasuk kelompok apa?
+    options:
+    - Hewan
+    - Buah/Sayur
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Harimau termasuk kelompok Hewan.
+  - question: Ciri yang cocok dengan Harimau adalah?
+    options:
+    - Belang hitam, cakar tajam, tubuh kuat
+    - Bersirip, bersisik, hidup di air
+    - Biji berjajar, tongkol panjang, berdaun hijau
+    - Telinga panjang, melompat, bulu lembut
+    correctIndex: 0
+    explanation: 'Ciri utama Harimau: Belang hitam, cakar tajam, tubuh kuat.'
+  - question: Warna yang cocok dengan Harimau adalah?
+    options:
+    - Oranye dengan belang hitam
+    - Beragam warna
+    - Kuning
+    - Putih, cokelat, atau abu-abu
+    correctIndex: 0
+    explanation: 'Warna/pengenal Harimau: Oranye dengan belang hitam.'
+  - question: Kartu huruf I berisi objek apa?
+    options:
+    - Ikan
+    - Jagung
+    - Kelinci
+    - Lemon
+    correctIndex: 0
+    explanation: Kartu huruf I adalah Ikan.
+  - question: Huruf awal dari Ikan adalah?
+    options:
+    - I
+    - J
+    - K
+    - L
+    correctIndex: 0
+    explanation: Ikan dimulai dari huruf I.
+  - question: Ikan termasuk kelompok apa?
+    options:
+    - Hewan
+    - Buah/Sayur
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Ikan termasuk kelompok Hewan.
+  - question: Ciri yang cocok dengan Ikan adalah?
+    options:
+    - Bersirip, bersisik, hidup di air
+    - Biji berjajar, tongkol panjang, berdaun hijau
+    - Telinga panjang, melompat, bulu lembut
+    - Oval, kulit kuning, rasa asam
+    correctIndex: 0
+    explanation: 'Ciri utama Ikan: Bersirip, bersisik, hidup di air.'
+  - question: Warna yang cocok dengan Ikan adalah?
+    options:
+    - Beragam warna
+    - Kuning
+    - Putih, cokelat, atau abu-abu
+    - Hijau, kuning, atau oranye
+    correctIndex: 0
+    explanation: 'Warna/pengenal Ikan: Beragam warna.'
+  - question: Kartu huruf J berisi objek apa?
+    options:
+    - Jagung
+    - Kelinci
+    - Lemon
+    - Mangga
+    correctIndex: 0
+    explanation: Kartu huruf J adalah Jagung.
+  - question: Huruf awal dari Jagung adalah?
+    options:
+    - J
+    - K
+    - L
+    - M
+    correctIndex: 0
+    explanation: Jagung dimulai dari huruf J.
+  - question: Jagung termasuk kelompok apa?
+    options:
+    - Buah/Sayur
+    - Hewan
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Jagung termasuk kelompok Buah/Sayur.
+  - question: Ciri yang cocok dengan Jagung adalah?
+    options:
+    - Biji berjajar, tongkol panjang, berdaun hijau
+    - Telinga panjang, melompat, bulu lembut
+    - Oval, kulit kuning, rasa asam
+    - Lonjong, berdaging tebal, berbiji besar
+    correctIndex: 0
+    explanation: 'Ciri utama Jagung: Biji berjajar, tongkol panjang, berdaun hijau.'
+  - question: Warna yang cocok dengan Jagung adalah?
+    options:
+    - Kuning
+    - Putih, cokelat, atau abu-abu
+    - Hijau, kuning, atau oranye
+    - Kuning dan hijau
+    correctIndex: 0
+    explanation: 'Warna/pengenal Jagung: Kuning.'
+  - question: Kartu huruf K berisi objek apa?
+    options:
+    - Kelinci
+    - Lemon
+    - Mangga
+    - Nanas
+    correctIndex: 0
+    explanation: Kartu huruf K adalah Kelinci.
+  - question: Huruf awal dari Kelinci adalah?
+    options:
+    - K
+    - L
+    - M
+    - N
+    correctIndex: 0
+    explanation: Kelinci dimulai dari huruf K.
+  - question: Kelinci termasuk kelompok apa?
+    options:
+    - Hewan
+    - Buah/Sayur
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Kelinci termasuk kelompok Hewan.
+  - question: Ciri yang cocok dengan Kelinci adalah?
+    options:
+    - Telinga panjang, melompat, bulu lembut
+    - Oval, kulit kuning, rasa asam
+    - Lonjong, berdaging tebal, berbiji besar
+    - Kulit bersisik tajam, mahkota daun, rasa manis asam
+    correctIndex: 0
+    explanation: 'Ciri utama Kelinci: Telinga panjang, melompat, bulu lembut.'
+  - question: Warna yang cocok dengan Kelinci adalah?
+    options:
+    - Putih, cokelat, atau abu-abu
+    - Kuning
+    - Hijau, kuning, atau oranye
+    - Kuning dan hijau
+    correctIndex: 0
+    explanation: 'Warna/pengenal Kelinci: Putih, cokelat, atau abu-abu.'
+  - question: Kartu huruf L berisi objek apa?
+    options:
+    - Lemon
+    - Mangga
+    - Nanas
+    - Orang Utan
+    correctIndex: 0
+    explanation: Kartu huruf L adalah Lemon.
+  - question: Huruf awal dari Lemon adalah?
+    options:
+    - L
+    - M
+    - N
+    - O
+    correctIndex: 0
+    explanation: Lemon dimulai dari huruf L.
+  - question: Lemon termasuk kelompok apa?
+    options:
+    - Buah/Sayur
+    - Hewan
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Lemon termasuk kelompok Buah/Sayur.
+  - question: Ciri yang cocok dengan Lemon adalah?
+    options:
+    - Oval, kulit kuning, rasa asam
+    - Lonjong, berdaging tebal, berbiji besar
+    - Kulit bersisik tajam, mahkota daun, rasa manis asam
+    - Lengan panjang, berbulu merah kecokelatan, pintar memanjat
+    correctIndex: 0
+    explanation: 'Ciri utama Lemon: Oval, kulit kuning, rasa asam.'
+  - question: Warna yang cocok dengan Lemon adalah?
+    options:
+    - Kuning
+    - Hijau, kuning, atau oranye
+    - Kuning dan hijau
+    - Cokelat kemerahan
+    correctIndex: 0
+    explanation: 'Warna/pengenal Lemon: Kuning.'
+  - question: Kartu huruf M berisi objek apa?
+    options:
+    - Mangga
+    - Nanas
+    - Orang Utan
+    - Pepaya
+    correctIndex: 0
+    explanation: Kartu huruf M adalah Mangga.
+  - question: Huruf awal dari Mangga adalah?
+    options:
+    - M
+    - N
+    - O
+    - P
+    correctIndex: 0
+    explanation: Mangga dimulai dari huruf M.
+  - question: Mangga termasuk kelompok apa?
+    options:
+    - Buah/Sayur
+    - Hewan
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Mangga termasuk kelompok Buah/Sayur.
+  - question: Ciri yang cocok dengan Mangga adalah?
+    options:
+    - Lonjong, berdaging tebal, berbiji besar
+    - Kulit bersisik tajam, mahkota daun, rasa manis asam
+    - Lengan panjang, berbulu merah kecokelatan, pintar memanjat
+    - Lonjong, daging oranye, banyak biji kecil
+    correctIndex: 0
+    explanation: 'Ciri utama Mangga: Lonjong, berdaging tebal, berbiji besar.'
+  - question: Warna yang cocok dengan Mangga adalah?
+    options:
+    - Hijau, kuning, atau oranye
+    - Kuning dan hijau
+    - Cokelat kemerahan
+    - Hijau atau oranye
+    correctIndex: 0
+    explanation: 'Warna/pengenal Mangga: Hijau, kuning, atau oranye.'
+  - question: Kartu huruf N berisi objek apa?
+    options:
+    - Nanas
+    - Orang Utan
+    - Pepaya
+    - Quail
+    correctIndex: 0
+    explanation: Kartu huruf N adalah Nanas.
+  - question: Huruf awal dari Nanas adalah?
+    options:
+    - N
+    - O
+    - P
+    - Q
+    correctIndex: 0
+    explanation: Nanas dimulai dari huruf N.
+  - question: Nanas termasuk kelompok apa?
+    options:
+    - Buah/Sayur
+    - Hewan
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Nanas termasuk kelompok Buah/Sayur.
+  - question: Ciri yang cocok dengan Nanas adalah?
+    options:
+    - Kulit bersisik tajam, mahkota daun, rasa manis asam
+    - Lengan panjang, berbulu merah kecokelatan, pintar memanjat
+    - Lonjong, daging oranye, banyak biji kecil
+    - Burung kecil, tubuh berbintik, kaki pendek
+    correctIndex: 0
+    explanation: 'Ciri utama Nanas: Kulit bersisik tajam, mahkota daun, rasa manis
+      asam.'
+  - question: Warna yang cocok dengan Nanas adalah?
+    options:
+    - Kuning dan hijau
+    - Cokelat kemerahan
+    - Hijau atau oranye
+    - Cokelat bercorak
+    correctIndex: 0
+    explanation: 'Warna/pengenal Nanas: Kuning dan hijau.'
+  - question: Kartu huruf O berisi objek apa?
+    options:
+    - Orang Utan
+    - Pepaya
+    - Quail
+    - Rambutan
+    correctIndex: 0
+    explanation: Kartu huruf O adalah Orang Utan.
+  - question: Huruf awal dari Orang Utan adalah?
+    options:
+    - O
+    - P
+    - Q
+    - R
+    correctIndex: 0
+    explanation: Orang Utan dimulai dari huruf O.
+  - question: Orang Utan termasuk kelompok apa?
+    options:
+    - Hewan
+    - Buah/Sayur
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Orang Utan termasuk kelompok Hewan.
+  - question: Ciri yang cocok dengan Orang Utan adalah?
+    options:
+    - Lengan panjang, berbulu merah kecokelatan, pintar memanjat
+    - Lonjong, daging oranye, banyak biji kecil
+    - Burung kecil, tubuh berbintik, kaki pendek
+    - Kulit berambut, daging putih, rasa manis
+    correctIndex: 0
+    explanation: 'Ciri utama Orang Utan: Lengan panjang, berbulu merah kecokelatan,
+      pintar memanjat.'
+  - question: Warna yang cocok dengan Orang Utan adalah?
+    options:
+    - Cokelat kemerahan
+    - Hijau atau oranye
+    - Cokelat bercorak
+    - Merah atau kuning
+    correctIndex: 0
+    explanation: 'Warna/pengenal Orang Utan: Cokelat kemerahan.'
+  - question: Kartu huruf P berisi objek apa?
+    options:
+    - Pepaya
+    - Quail
+    - Rambutan
+    - Sapi
+    correctIndex: 0
+    explanation: Kartu huruf P adalah Pepaya.
+  - question: Huruf awal dari Pepaya adalah?
+    options:
+    - P
+    - Q
+    - R
+    - S
+    correctIndex: 0
+    explanation: Pepaya dimulai dari huruf P.
+  - question: Pepaya termasuk kelompok apa?
+    options:
+    - Buah/Sayur
+    - Hewan
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Pepaya termasuk kelompok Buah/Sayur.
+  - question: Ciri yang cocok dengan Pepaya adalah?
+    options:
+    - Lonjong, daging oranye, banyak biji kecil
+    - Burung kecil, tubuh berbintik, kaki pendek
+    - Kulit berambut, daging putih, rasa manis
+    - Badan besar, bertanduk, makan rumput
+    correctIndex: 0
+    explanation: 'Ciri utama Pepaya: Lonjong, daging oranye, banyak biji kecil.'
+  - question: Warna yang cocok dengan Pepaya adalah?
+    options:
+    - Hijau atau oranye
+    - Cokelat bercorak
+    - Merah atau kuning
+    - Putih, cokelat, atau hitam
+    correctIndex: 0
+    explanation: 'Warna/pengenal Pepaya: Hijau atau oranye.'
+  - question: Kartu huruf Q berisi objek apa?
+    options:
+    - Quail
+    - Rambutan
+    - Sapi
+    - Timun
+    correctIndex: 0
+    explanation: Kartu huruf Q adalah Quail.
+  - question: Huruf awal dari Quail adalah?
+    options:
+    - Q
+    - R
+    - S
+    - T
+    correctIndex: 0
+    explanation: Quail dimulai dari huruf Q.
+  - question: Quail termasuk kelompok apa?
+    options:
+    - Hewan
+    - Buah/Sayur
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Quail termasuk kelompok Hewan.
+  - question: Ciri yang cocok dengan Quail adalah?
+    options:
+    - Burung kecil, tubuh berbintik, kaki pendek
+    - Kulit berambut, daging putih, rasa manis
+    - Badan besar, bertanduk, makan rumput
+    - Panjang, hijau, banyak air
+    correctIndex: 0
+    explanation: 'Ciri utama Quail: Burung kecil, tubuh berbintik, kaki pendek.'
+  - question: Warna yang cocok dengan Quail adalah?
+    options:
+    - Cokelat bercorak
+    - Merah atau kuning
+    - Putih, cokelat, atau hitam
+    - Hijau
+    correctIndex: 0
+    explanation: 'Warna/pengenal Quail: Cokelat bercorak.'
+  - question: Kartu huruf R berisi objek apa?
+    options:
+    - Rambutan
+    - Sapi
+    - Timun
+    - Ular
+    correctIndex: 0
+    explanation: Kartu huruf R adalah Rambutan.
+  - question: Huruf awal dari Rambutan adalah?
+    options:
+    - R
+    - S
+    - T
+    - U
+    correctIndex: 0
+    explanation: Rambutan dimulai dari huruf R.
+  - question: Rambutan termasuk kelompok apa?
+    options:
+    - Buah/Sayur
+    - Hewan
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Rambutan termasuk kelompok Buah/Sayur.
+  - question: Ciri yang cocok dengan Rambutan adalah?
+    options:
+    - Kulit berambut, daging putih, rasa manis
+    - Badan besar, bertanduk, makan rumput
+    - Panjang, hijau, banyak air
+    - Tubuh panjang, tidak berkaki, melata
+    correctIndex: 0
+    explanation: 'Ciri utama Rambutan: Kulit berambut, daging putih, rasa manis.'
+  - question: Warna yang cocok dengan Rambutan adalah?
+    options:
+    - Merah atau kuning
+    - Putih, cokelat, atau hitam
+    - Hijau
+    - Beragam warna
+    correctIndex: 0
+    explanation: 'Warna/pengenal Rambutan: Merah atau kuning.'
+  - question: Kartu huruf S berisi objek apa?
+    options:
+    - Sapi
+    - Timun
+    - Ular
+    - Vampire Bat
+    correctIndex: 0
+    explanation: Kartu huruf S adalah Sapi.
+  - question: Huruf awal dari Sapi adalah?
+    options:
+    - S
+    - T
+    - U
+    - V
+    correctIndex: 0
+    explanation: Sapi dimulai dari huruf S.
+  - question: Sapi termasuk kelompok apa?
+    options:
+    - Hewan
+    - Buah/Sayur
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Sapi termasuk kelompok Hewan.
+  - question: Ciri yang cocok dengan Sapi adalah?
+    options:
+    - Badan besar, bertanduk, makan rumput
+    - Panjang, hijau, banyak air
+    - Tubuh panjang, tidak berkaki, melata
+    - Bersayap, aktif malam, tidur menggantung
+    correctIndex: 0
+    explanation: 'Ciri utama Sapi: Badan besar, bertanduk, makan rumput.'
+  - question: Warna yang cocok dengan Sapi adalah?
+    options:
+    - Putih, cokelat, atau hitam
+    - Hijau
+    - Beragam warna
+    - Cokelat gelap
+    correctIndex: 0
+    explanation: 'Warna/pengenal Sapi: Putih, cokelat, atau hitam.'
+  - question: Kartu huruf T berisi objek apa?
+    options:
+    - Timun
+    - Ular
+    - Vampire Bat
+    - Wortel
+    correctIndex: 0
+    explanation: Kartu huruf T adalah Timun.
+  - question: Huruf awal dari Timun adalah?
+    options:
+    - T
+    - U
+    - V
+    - W
+    correctIndex: 0
+    explanation: Timun dimulai dari huruf T.
+  - question: Timun termasuk kelompok apa?
+    options:
+    - Buah/Sayur
+    - Hewan
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Timun termasuk kelompok Buah/Sayur.
+  - question: Ciri yang cocok dengan Timun adalah?
+    options:
+    - Panjang, hijau, banyak air
+    - Tubuh panjang, tidak berkaki, melata
+    - Bersayap, aktif malam, tidur menggantung
+    - Akar panjang, warna oranye, daun hijau
+    correctIndex: 0
+    explanation: 'Ciri utama Timun: Panjang, hijau, banyak air.'
+  - question: Warna yang cocok dengan Timun adalah?
+    options:
+    - Hijau
+    - Beragam warna
+    - Cokelat gelap
+    - Oranye
+    correctIndex: 0
+    explanation: 'Warna/pengenal Timun: Hijau.'
+  - question: Kartu huruf U berisi objek apa?
+    options:
+    - Ular
+    - Vampire Bat
+    - Wortel
+    - Xenops
+    correctIndex: 0
+    explanation: Kartu huruf U adalah Ular.
+  - question: Huruf awal dari Ular adalah?
+    options:
+    - U
+    - V
+    - W
+    - X
+    correctIndex: 0
+    explanation: Ular dimulai dari huruf U.
+  - question: Ular termasuk kelompok apa?
+    options:
+    - Hewan
+    - Buah/Sayur
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Ular termasuk kelompok Hewan.
+  - question: Ciri yang cocok dengan Ular adalah?
+    options:
+    - Tubuh panjang, tidak berkaki, melata
+    - Bersayap, aktif malam, tidur menggantung
+    - Akar panjang, warna oranye, daun hijau
+    - Burung kecil, paruh runcing, hidup di pohon
+    correctIndex: 0
+    explanation: 'Ciri utama Ular: Tubuh panjang, tidak berkaki, melata.'
+  - question: Warna yang cocok dengan Ular adalah?
+    options:
+    - Beragam warna
+    - Cokelat gelap
+    - Oranye
+    - Cokelat dan krem
+    correctIndex: 0
+    explanation: 'Warna/pengenal Ular: Beragam warna.'
+  - question: Kartu huruf V berisi objek apa?
+    options:
+    - Vampire Bat
+    - Wortel
+    - Xenops
+    - Yak
+    correctIndex: 0
+    explanation: Kartu huruf V adalah Vampire Bat.
+  - question: Huruf awal dari Vampire Bat adalah?
+    options:
+    - V
+    - W
+    - X
+    - Y
+    correctIndex: 0
+    explanation: Vampire Bat dimulai dari huruf V.
+  - question: Vampire Bat termasuk kelompok apa?
+    options:
+    - Hewan
+    - Buah/Sayur
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Vampire Bat termasuk kelompok Hewan.
+  - question: Ciri yang cocok dengan Vampire Bat adalah?
+    options:
+    - Bersayap, aktif malam, tidur menggantung
+    - Akar panjang, warna oranye, daun hijau
+    - Burung kecil, paruh runcing, hidup di pohon
+    - Bulu tebal, tanduk panjang, kuat di udara dingin
+    correctIndex: 0
+    explanation: 'Ciri utama Vampire Bat: Bersayap, aktif malam, tidur menggantung.'
+  - question: Warna yang cocok dengan Vampire Bat adalah?
+    options:
+    - Cokelat gelap
+    - Oranye
+    - Cokelat dan krem
+    - Cokelat tua atau hitam
+    correctIndex: 0
+    explanation: 'Warna/pengenal Vampire Bat: Cokelat gelap.'
+  - question: Kartu huruf W berisi objek apa?
+    options:
+    - Wortel
+    - Xenops
+    - Yak
+    - Zebra
+    correctIndex: 0
+    explanation: Kartu huruf W adalah Wortel.
+  - question: Huruf awal dari Wortel adalah?
+    options:
+    - W
+    - X
+    - Y
+    - Z
+    correctIndex: 0
+    explanation: Wortel dimulai dari huruf W.
+  - question: Wortel termasuk kelompok apa?
+    options:
+    - Buah/Sayur
+    - Hewan
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Wortel termasuk kelompok Buah/Sayur.
+  - question: Ciri yang cocok dengan Wortel adalah?
+    options:
+    - Akar panjang, warna oranye, daun hijau
+    - Burung kecil, paruh runcing, hidup di pohon
+    - Bulu tebal, tanduk panjang, kuat di udara dingin
+    - Belang hitam putih, mirip kuda, hidup berkelompok
+    correctIndex: 0
+    explanation: 'Ciri utama Wortel: Akar panjang, warna oranye, daun hijau.'
+  - question: Warna yang cocok dengan Wortel adalah?
+    options:
+    - Oranye
+    - Cokelat dan krem
+    - Cokelat tua atau hitam
+    - Hitam dan putih
+    correctIndex: 0
+    explanation: 'Warna/pengenal Wortel: Oranye.'
+  - question: Kartu huruf X berisi objek apa?
+    options:
+    - Xenops
+    - Yak
+    - Zebra
+    - Apel
+    correctIndex: 0
+    explanation: Kartu huruf X adalah Xenops.
+  - question: Huruf awal dari Xenops adalah?
+    options:
+    - X
+    - Y
+    - Z
+    - A
+    correctIndex: 0
+    explanation: Xenops dimulai dari huruf X.
+  - question: Xenops termasuk kelompok apa?
+    options:
+    - Hewan
+    - Buah/Sayur
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Xenops termasuk kelompok Hewan.
+  - question: Ciri yang cocok dengan Xenops adalah?
+    options:
+    - Burung kecil, paruh runcing, hidup di pohon
+    - Bulu tebal, tanduk panjang, kuat di udara dingin
+    - Belang hitam putih, mirip kuda, hidup berkelompok
+    - Bulat, bertangkai, kulit halus
+    correctIndex: 0
+    explanation: 'Ciri utama Xenops: Burung kecil, paruh runcing, hidup di pohon.'
+  - question: Warna yang cocok dengan Xenops adalah?
+    options:
+    - Cokelat dan krem
+    - Cokelat tua atau hitam
+    - Hitam dan putih
+    - Merah, hijau, atau kuning
+    correctIndex: 0
+    explanation: 'Warna/pengenal Xenops: Cokelat dan krem.'
+  - question: Kartu huruf Y berisi objek apa?
+    options:
+    - Yak
+    - Zebra
+    - Apel
+    - Buaya
+    correctIndex: 0
+    explanation: Kartu huruf Y adalah Yak.
+  - question: Huruf awal dari Yak adalah?
+    options:
+    - Y
+    - Z
+    - A
+    - B
+    correctIndex: 0
+    explanation: Yak dimulai dari huruf Y.
+  - question: Yak termasuk kelompok apa?
+    options:
+    - Hewan
+    - Buah/Sayur
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Yak termasuk kelompok Hewan.
+  - question: Ciri yang cocok dengan Yak adalah?
+    options:
+    - Bulu tebal, tanduk panjang, kuat di udara dingin
+    - Belang hitam putih, mirip kuda, hidup berkelompok
+    - Bulat, bertangkai, kulit halus
+    - Bersisik, tubuh panjang, gigi tajam
+    correctIndex: 0
+    explanation: 'Ciri utama Yak: Bulu tebal, tanduk panjang, kuat di udara dingin.'
+  - question: Warna yang cocok dengan Yak adalah?
+    options:
+    - Cokelat tua atau hitam
+    - Hitam dan putih
+    - Merah, hijau, atau kuning
+    - Hijau tua atau cokelat
+    correctIndex: 0
+    explanation: 'Warna/pengenal Yak: Cokelat tua atau hitam.'
+  - question: Kartu huruf Z berisi objek apa?
+    options:
+    - Zebra
+    - Apel
+    - Buaya
+    - Ceri
+    correctIndex: 0
+    explanation: Kartu huruf Z adalah Zebra.
+  - question: Huruf awal dari Zebra adalah?
+    options:
+    - Z
+    - A
+    - B
+    - C
+    correctIndex: 0
+    explanation: Zebra dimulai dari huruf Z.
+  - question: Zebra termasuk kelompok apa?
+    options:
+    - Hewan
+    - Buah/Sayur
+    - Benda Mati
+    - Kendaraan
+    correctIndex: 0
+    explanation: Zebra termasuk kelompok Hewan.
+  - question: Ciri yang cocok dengan Zebra adalah?
+    options:
+    - Belang hitam putih, mirip kuda, hidup berkelompok
+    - Bulat, bertangkai, kulit halus
+    - Bersisik, tubuh panjang, gigi tajam
+    - Kecil, bulat, bertangkai
+    correctIndex: 0
+    explanation: 'Ciri utama Zebra: Belang hitam putih, mirip kuda, hidup berkelompok.'
+  - question: Warna yang cocok dengan Zebra adalah?
+    options:
+    - Hitam dan putih
+    - Merah, hijau, atau kuning
+    - Hijau tua atau cokelat
+    - Merah
+    correctIndex: 0
+    explanation: 'Warna/pengenal Zebra: Hitam dan putih.'

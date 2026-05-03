@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: domba
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: domba
+  category: 1
+  title: Domba
+  subtitle: Huruf D - Domba
+  description: Domba adalah hewan ternak berbulu tebal. Bulunya dapat dimanfaatkan
+    untuk membuat wol.
+  thumbnail: {fileID: 21300000, guid: 714c0be0de6300334bf4634e1292c163, type: 3}
+  referenceImageTexture: {fileID: 2800000, guid: 714c0be0de6300334bf4634e1292c163, type: 3}
+  prefab: {fileID: 6532185404592330397, guid: ac3f38988787027aaa30dd6b3dbcb467, type: 3}
+  referenceImageName: D_Domba
+  targetWidthMeters: 0.075
+  objectType: Hewan
+  colorFocus: Putih atau krem
+  fontTypeFocus: Bulu tebal, berkaki empat, makan rumput
+  nameAudioClip: {fileID: 0}
+  funFact: Anak domba disebut cempe dan biasanya terlihat lucu saat melompat.
+  spellOverride: Domba
+  quizQuestions:
+  - Apa nama objek pada kartu huruf D?
+  - Huruf awal dari Domba adalah?
+  - Domba termasuk kelompok apa?
+  - Warna yang cocok dengan Domba adalah?
+  - Ciri utama Domba adalah?
+  - Jika petunjuknya "Bulu tebal, berkaki empat, makan rumput", kartu apa yang harus
+    discan?
+  quizAnswers:
+  - Domba
+  - D
+  - Hewan
+  - Putih atau krem
+  - Bulu tebal, berkaki empat, makan rumput
+  - Domba
+  quizWrongOptions:
+  - Elang|Flamingo|Gajah
+  - E|F|G
+  - Buah/Sayur|Benda Mati|Kendaraan
+  - Cokelat, putih, atau hitam|Merah muda|Abu-abu
+  - Sayap lebar, paruh bengkok, cakar tajam|Leher panjang, kaki panjang, berdiri
+    di air|Badan besar, belalai panjang, telinga lebar
+  - Elang|Flamingo|Gajah

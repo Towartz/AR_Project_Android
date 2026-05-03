@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: ular
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: ular
+  category: 1
+  title: Ular
+  subtitle: Huruf U - Ular
+  description: Ular adalah reptil bertubuh panjang tanpa kaki. Ular bergerak dengan
+    cara melata.
+  thumbnail: {fileID: 21300000, guid: 4d4f189fbe8b2022685bb9bbf24ec47b, type: 3}
+  referenceImageTexture: {fileID: 2800000, guid: 4d4f189fbe8b2022685bb9bbf24ec47b, type: 3}
+  prefab: {fileID: 2748425350076121011, guid: 0ed9579f86fdc364c9147e46f2977b7a, type: 3}
+  referenceImageName: U_Ular
+  targetWidthMeters: 0.075
+  objectType: Hewan
+  colorFocus: Beragam warna
+  fontTypeFocus: Tubuh panjang, tidak berkaki, melata
+  nameAudioClip: {fileID: 0}
+  funFact: Ular menjulurkan lidah untuk membantu mengenali bau di sekitarnya.
+  spellOverride: Ular
+  quizQuestions:
+  - Apa nama objek pada kartu huruf U?
+  - Huruf awal dari Ular adalah?
+  - Ular termasuk kelompok apa?
+  - Warna yang cocok dengan Ular adalah?
+  - Ciri utama Ular adalah?
+  - Jika petunjuknya "Tubuh panjang, tidak berkaki, melata", kartu apa yang harus
+    discan?
+  quizAnswers:
+  - Ular
+  - U
+  - Hewan
+  - Beragam warna
+  - Tubuh panjang, tidak berkaki, melata
+  - Ular
+  quizWrongOptions:
+  - Vampire Bat|Wortel|Xenops
+  - V|W|X
+  - Buah/Sayur|Benda Mati|Kendaraan
+  - Cokelat gelap|Oranye|Cokelat dan krem
+  - Bersayap, aktif malam, tidur menggantung|Akar panjang, warna oranye, daun hijau|Burung
+    kecil, paruh runcing, hidup di pohon
+  - Vampire Bat|Wortel|Xenops

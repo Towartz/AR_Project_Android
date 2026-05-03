@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: gajah
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: gajah
+  category: 1
+  title: Gajah
+  subtitle: Huruf G - Gajah
+  description: Gajah adalah hewan darat yang sangat besar. Ia memakai belalai untuk
+    mengambil makanan dan minum.
+  thumbnail: {fileID: 21300000, guid: 87369213ebd6fabcbbb3936cd3de6467, type: 3}
+  referenceImageTexture: {fileID: 2800000, guid: 87369213ebd6fabcbbb3936cd3de6467, type: 3}
+  prefab: {fileID: 1077559600430787441, guid: 6f2c2de6bb048fec382763141c26fd23, type: 3}
+  referenceImageName: G_Gajah
+  targetWidthMeters: 0.075
+  objectType: Hewan
+  colorFocus: Abu-abu
+  fontTypeFocus: Badan besar, belalai panjang, telinga lebar
+  nameAudioClip: {fileID: 0}
+  funFact: Belalai gajah bisa dipakai untuk mencium, mengambil benda, dan menyemprot
+    air.
+  spellOverride: Gajah
+  quizQuestions:
+  - Apa nama objek pada kartu huruf G?
+  - Huruf awal dari Gajah adalah?
+  - Gajah termasuk kelompok apa?
+  - Warna yang cocok dengan Gajah adalah?
+  - Ciri utama Gajah adalah?
+  - Jika petunjuknya "Badan besar, belalai panjang, telinga lebar", kartu apa yang
+    harus discan?
+  quizAnswers:
+  - Gajah
+  - G
+  - Hewan
+  - Abu-abu
+  - Badan besar, belalai panjang, telinga lebar
+  - Gajah
+  quizWrongOptions:
+  - Harimau|Ikan|Jagung
+  - H|I|J
+  - Buah/Sayur|Benda Mati|Kendaraan
+  - Oranye dengan belang hitam|Beragam warna|Kuning
+  - Belang hitam, cakar tajam, tubuh kuat|Bersirip, bersisik, hidup di air|Biji berjajar,
+    tongkol panjang, berdaun hijau
+  - Harimau|Ikan|Jagung

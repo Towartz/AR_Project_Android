@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: buaya
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: buaya
+  category: 1
+  title: Buaya
+  subtitle: Huruf B - Buaya
+  description: Buaya adalah reptil besar yang hidup di air dan darat. Tubuhnya bersisik,
+    mulutnya panjang, dan ekornya kuat.
+  thumbnail: {fileID: 21300000, guid: c0b1b5b26d8bb0a3a99a08eff74f33b4, type: 3}
+  referenceImageTexture: {fileID: 2800000, guid: c0b1b5b26d8bb0a3a99a08eff74f33b4, type: 3}
+  prefab: {fileID: 6308349863953943896, guid: 703879f65cdf6616aab1020757bfd768, type: 3}
+  referenceImageName: B_Buaya
+  targetWidthMeters: 0.075
+  objectType: Hewan
+  colorFocus: Hijau tua atau cokelat
+  fontTypeFocus: Bersisik, tubuh panjang, gigi tajam
+  nameAudioClip: {fileID: 0}
+  funFact: Buaya bisa menunggu dengan sangat tenang di air sebelum bergerak cepat.
+  spellOverride: Buaya
+  quizQuestions:
+  - Apa nama objek pada kartu huruf B?
+  - Huruf awal dari Buaya adalah?
+  - Buaya termasuk kelompok apa?
+  - Warna yang cocok dengan Buaya adalah?
+  - Ciri utama Buaya adalah?
+  - Jika petunjuknya "Bersisik, tubuh panjang, gigi tajam", kartu apa yang harus
+    discan?
+  quizAnswers:
+  - Buaya
+  - B
+  - Hewan
+  - Hijau tua atau cokelat
+  - Bersisik, tubuh panjang, gigi tajam
+  - Buaya
+  quizWrongOptions:
+  - Ceri|Domba|Elang
+  - C|D|E
+  - Buah/Sayur|Benda Mati|Kendaraan
+  - Merah|Putih atau krem|Cokelat, putih, atau hitam
+  - Kecil, bulat, bertangkai|Bulu tebal, berkaki empat, makan rumput|Sayap lebar,
+    paruh bengkok, cakar tajam
+  - Ceri|Domba|Elang

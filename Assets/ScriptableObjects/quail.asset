@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: quail
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: quail
+  category: 1
+  title: Quail
+  subtitle: Huruf Q - Quail
+  description: Quail atau burung puyuh adalah burung kecil bercorak cokelat. Burung
+    ini sering berjalan di tanah.
+  thumbnail: {fileID: 21300000, guid: c2048d19aedd2376fa96d15df924effd, type: 3}
+  referenceImageTexture: {fileID: 2800000, guid: c2048d19aedd2376fa96d15df924effd, type: 3}
+  prefab: {fileID: 6184933227254791424, guid: 824af9b01948753438fdd145164bc32e, type: 3}
+  referenceImageName: Q_Quail
+  targetWidthMeters: 0.075
+  objectType: Hewan
+  colorFocus: Cokelat bercorak
+  fontTypeFocus: Burung kecil, tubuh berbintik, kaki pendek
+  nameAudioClip: {fileID: 0}
+  funFact: Quail dikenal juga sebagai burung puyuh.
+  spellOverride: Quail
+  quizQuestions:
+  - Apa nama objek pada kartu huruf Q?
+  - Huruf awal dari Quail adalah?
+  - Quail termasuk kelompok apa?
+  - Warna yang cocok dengan Quail adalah?
+  - Ciri utama Quail adalah?
+  - Jika petunjuknya "Burung kecil, tubuh berbintik, kaki pendek", kartu apa yang
+    harus discan?
+  quizAnswers:
+  - Quail
+  - Q
+  - Hewan
+  - Cokelat bercorak
+  - Burung kecil, tubuh berbintik, kaki pendek
+  - Quail
+  quizWrongOptions:
+  - Rambutan|Sapi|Timun
+  - R|S|T
+  - Buah/Sayur|Benda Mati|Kendaraan
+  - Merah atau kuning|Putih, cokelat, atau hitam|Hijau
+  - Kulit berambut, daging putih, rasa manis|Badan besar, bertanduk, makan rumput|Panjang,
+    hijau, banyak air
+  - Rambutan|Sapi|Timun

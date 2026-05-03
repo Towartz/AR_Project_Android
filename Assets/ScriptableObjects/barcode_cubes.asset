@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: barcode_cubes
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: cubes
+  category: 0
+  title: Cube Debug
+  subtitle: Objek cube untuk test barcode
+  description: Barcode payload cubes akan memunculkan cube debug untuk verifikasi
+    scan barcode Vuforia.
+  thumbnail: {fileID: 0}
+  referenceImageTexture: {fileID: 0}
+  prefab: {fileID: 8986328500875594450, guid: d825bbdf58c379d4290da92e387f71d0, type: 3}
+  referenceImageName: 
+  targetWidthMeters: 0.12
+  objectType: Cube
+  colorFocus: Biru
+  fontTypeFocus: 

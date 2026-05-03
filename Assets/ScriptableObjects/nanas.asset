@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: nanas
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: nanas
+  category: 0
+  title: Nanas
+  subtitle: Huruf N - Nanas
+  description: Nanas adalah buah tropis dengan mahkota daun di atas. Kulitnya bersisik
+    dan rasanya manis asam.
+  thumbnail: {fileID: 21300000, guid: aa4efc49a978b3938845c93a7c9e1760, type: 3}
+  referenceImageTexture: {fileID: 2800000, guid: aa4efc49a978b3938845c93a7c9e1760, type: 3}
+  prefab: {fileID: 4747460186232469004, guid: de2d75ddff654604893b87ff68bb2a75, type: 3}
+  referenceImageName: N_Nanas
+  targetWidthMeters: 0.075
+  objectType: Buah/Sayur
+  colorFocus: Kuning dan hijau
+  fontTypeFocus: Kulit bersisik tajam, mahkota daun, rasa manis asam
+  nameAudioClip: {fileID: 0}
+  funFact: Nanas tampak seperti memakai mahkota daun di bagian atas.
+  spellOverride: Nanas
+  quizQuestions:
+  - Apa nama objek pada kartu huruf N?
+  - Huruf awal dari Nanas adalah?
+  - Nanas termasuk kelompok apa?
+  - Warna yang cocok dengan Nanas adalah?
+  - Ciri utama Nanas adalah?
+  - Jika petunjuknya "Kulit bersisik tajam, mahkota daun, rasa manis asam", kartu
+    apa yang harus discan?
+  quizAnswers:
+  - Nanas
+  - N
+  - Buah/Sayur
+  - Kuning dan hijau
+  - Kulit bersisik tajam, mahkota daun, rasa manis asam
+  - Nanas
+  quizWrongOptions:
+  - Orang Utan|Pepaya|Quail
+  - O|P|Q
+  - Hewan|Benda Mati|Kendaraan
+  - Cokelat kemerahan|Hijau atau oranye|Cokelat bercorak
+  - Lengan panjang, berbulu merah kecokelatan, pintar memanjat|Lonjong, daging oranye,
+    banyak biji kecil|Burung kecil, tubuh berbintik, kaki pendek
+  - Orang Utan|Pepaya|Quail

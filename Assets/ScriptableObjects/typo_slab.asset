@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: typo_slab
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: typo_slab
+  category: 0
+  title: Pisang
+  subtitle: Buah panjang berkulit kuning
+  description: Pisang mudah dikenali dari bentuknya yang memanjang dan melengkung.
+    Saat matang, kulitnya berubah kuning dan rasanya manis lembut.
+  thumbnail: {fileID: 21300000, guid: 00061681a97dda6739ed4c8b797443c2, type: 3}
+  referenceImageTexture: {fileID: 2800000, guid: 00061681a97dda6739ed4c8b797443c2, type: 3}
+  prefab: {fileID: 8938049239459803877, guid: 3e317a93407b832f791c0bd318143aa2, type: 3}
+  referenceImageName: typo_slab
+  targetWidthMeters: 0.12
+  objectType: Pisang
+  colorFocus: Kuning dan cokelat muda
+  fontTypeFocus: Panjang dan sedikit melengkung
+  nameAudioClip: {fileID: 0}
+  funFact: 
+  spellOverride: 
+  quizQuestions: []
+  quizAnswers: []
+  quizWrongOptions: []

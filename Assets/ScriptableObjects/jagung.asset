@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: jagung
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: jagung
+  category: 0
+  title: Jagung
+  subtitle: Huruf J - Jagung
+  description: Jagung adalah tanaman pangan dengan biji kuning yang tersusun di tongkol.
+    Jagung bisa dimakan rebus atau bakar.
+  thumbnail: {fileID: 21300000, guid: 19ef8087035f1cbe9ae26e30cf71b169, type: 3}
+  referenceImageTexture: {fileID: 2800000, guid: 19ef8087035f1cbe9ae26e30cf71b169, type: 3}
+  prefab: {fileID: 5315676107817820341, guid: e4448670e921915c3a56f7ecee684218, type: 3}
+  referenceImageName: J_Jagung
+  targetWidthMeters: 0.075
+  objectType: Buah/Sayur
+  colorFocus: Kuning
+  fontTypeFocus: Biji berjajar, tongkol panjang, berdaun hijau
+  nameAudioClip: {fileID: 0}
+  funFact: Satu tongkol jagung berisi banyak biji yang tersusun rapi.
+  spellOverride: Jagung
+  quizQuestions:
+  - Apa nama objek pada kartu huruf J?
+  - Huruf awal dari Jagung adalah?
+  - Jagung termasuk kelompok apa?
+  - Warna yang cocok dengan Jagung adalah?
+  - Ciri utama Jagung adalah?
+  - Jika petunjuknya "Biji berjajar, tongkol panjang, berdaun hijau", kartu apa yang
+    harus discan?
+  quizAnswers:
+  - Jagung
+  - J
+  - Buah/Sayur
+  - Kuning
+  - Biji berjajar, tongkol panjang, berdaun hijau
+  - Jagung
+  quizWrongOptions:
+  - Kelinci|Lemon|Mangga
+  - K|L|M
+  - Hewan|Benda Mati|Kendaraan
+  - Putih, cokelat, atau abu-abu|Kuning|Hijau, kuning, atau oranye
+  - Telinga panjang, melompat, bulu lembut|Oval, kulit kuning, rasa asam|Lonjong,
+    berdaging tebal, berbiji besar
+  - Kelinci|Lemon|Mangga

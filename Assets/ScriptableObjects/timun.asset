@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: timun
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: timun
+  category: 0
+  title: Timun
+  subtitle: Huruf T - Timun
+  description: Timun adalah sayur buah yang terasa segar karena banyak mengandung
+    air. Bentuknya panjang dan kulitnya hijau.
+  thumbnail: {fileID: 21300000, guid: 9689de866053c74e48393c2e32f989dc, type: 3}
+  referenceImageTexture: {fileID: 2800000, guid: 9689de866053c74e48393c2e32f989dc, type: 3}
+  prefab: {fileID: 7794705068830116012, guid: bdc840c007df9b151abe03b514ef4c13, type: 3}
+  referenceImageName: T_Timun
+  targetWidthMeters: 0.075
+  objectType: Buah/Sayur
+  colorFocus: Hijau
+  fontTypeFocus: Panjang, hijau, banyak air
+  nameAudioClip: {fileID: 0}
+  funFact: Timun sering dimakan sebagai lalapan karena rasanya segar.
+  spellOverride: Timun
+  quizQuestions:
+  - Apa nama objek pada kartu huruf T?
+  - Huruf awal dari Timun adalah?
+  - Timun termasuk kelompok apa?
+  - Warna yang cocok dengan Timun adalah?
+  - Ciri utama Timun adalah?
+  - Jika petunjuknya "Panjang, hijau, banyak air", kartu apa yang harus discan?
+  quizAnswers:
+  - Timun
+  - T
+  - Buah/Sayur
+  - Hijau
+  - Panjang, hijau, banyak air
+  - Timun
+  quizWrongOptions:
+  - Ular|Vampire Bat|Wortel
+  - U|V|W
+  - Hewan|Benda Mati|Kendaraan
+  - Beragam warna|Cokelat gelap|Oranye
+  - Tubuh panjang, tidak berkaki, melata|Bersayap, aktif malam, tidur menggantung|Akar
+    panjang, warna oranye, daun hijau
+  - Ular|Vampire Bat|Wortel

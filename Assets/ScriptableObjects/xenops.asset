@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: xenops
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: xenops
+  category: 1
+  title: Xenops
+  subtitle: Huruf X - Xenops
+  description: Xenops adalah burung kecil dari hutan tropis. Burung ini mencari serangga
+    di batang pohon.
+  thumbnail: {fileID: 21300000, guid: 5cea7ef9f83eed97d8f44db031329fa9, type: 3}
+  referenceImageTexture: {fileID: 2800000, guid: 5cea7ef9f83eed97d8f44db031329fa9, type: 3}
+  prefab: {fileID: 2319163980090101210, guid: caf89cec9e2a1055085359ec44955021, type: 3}
+  referenceImageName: X_Xenops
+  targetWidthMeters: 0.075
+  objectType: Hewan
+  colorFocus: Cokelat dan krem
+  fontTypeFocus: Burung kecil, paruh runcing, hidup di pohon
+  nameAudioClip: {fileID: 0}
+  funFact: Xenops membantu menjaga keseimbangan alam dengan memakan serangga kecil.
+  spellOverride: Xenops
+  quizQuestions:
+  - Apa nama objek pada kartu huruf X?
+  - Huruf awal dari Xenops adalah?
+  - Xenops termasuk kelompok apa?
+  - Warna yang cocok dengan Xenops adalah?
+  - Ciri utama Xenops adalah?
+  - Jika petunjuknya "Burung kecil, paruh runcing, hidup di pohon", kartu apa yang
+    harus discan?
+  quizAnswers:
+  - Xenops
+  - X
+  - Hewan
+  - Cokelat dan krem
+  - Burung kecil, paruh runcing, hidup di pohon
+  - Xenops
+  quizWrongOptions:
+  - Yak|Zebra|Apel
+  - Y|Z|A
+  - Buah/Sayur|Benda Mati|Kendaraan
+  - Cokelat tua atau hitam|Hitam dan putih|Merah, hijau, atau kuning
+  - Bulu tebal, tanduk panjang, kuat di udara dingin|Belang hitam putih, mirip kuda,
+    hidup berkelompok|Bulat, bertangkai, kulit halus
+  - Yak|Zebra|Apel

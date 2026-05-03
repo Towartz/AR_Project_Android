@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37012637b59dd2b46b35cba84814ec9e, type: 3}
+  m_Name: apel
+  m_EditorClassIdentifier: Assembly-CSharp::ARtiGraf.Data.MaterialContentData
+  id: apel
+  category: 0
+  title: Apel
+  subtitle: Huruf A - Apel
+  description: Apel adalah buah yang tumbuh di pohon. Kulitnya halus, dagingnya renyah,
+    dan rasanya manis atau sedikit asam.
+  thumbnail: {fileID: 21300000, guid: bc1ed031ef425baee9e6d22866272582, type: 3}
+  referenceImageTexture: {fileID: 2800000, guid: bc1ed031ef425baee9e6d22866272582, type: 3}
+  prefab: {fileID: 7912824194087178940, guid: 248baf56551eda53da9ca5fdf7b593df, type: 3}
+  referenceImageName: apple
+  targetWidthMeters: 0.075
+  objectType: Buah/Sayur
+  colorFocus: Merah, hijau, atau kuning
+  fontTypeFocus: Bulat, bertangkai, kulit halus
+  nameAudioClip: {fileID: 0}
+  funFact: Apel punya biji kecil di bagian tengah dan sering dimakan sebagai camilan
+    sehat.
+  spellOverride: Apel
+  quizQuestions:
+  - Apa nama objek pada kartu huruf A?
+  - Huruf awal dari Apel adalah?
+  - Apel termasuk kelompok apa?
+  - Warna yang cocok dengan Apel adalah?
+  - Ciri utama Apel adalah?
+  - Jika petunjuknya "Bulat, bertangkai, kulit halus", kartu apa yang harus discan?
+  quizAnswers:
+  - Apel
+  - A
+  - Buah/Sayur
+  - Merah, hijau, atau kuning
+  - Bulat, bertangkai, kulit halus
+  - Apel
+  quizWrongOptions:
+  - Buaya|Ceri|Domba
+  - B|C|D
+  - Hewan|Benda Mati|Kendaraan
+  - Hijau tua atau cokelat|Merah|Putih atau krem
+  - Bersisik, tubuh panjang, gigi tajam|Kecil, bulat, bertangkai|Bulu tebal, berkaki
+    empat, makan rumput
+  - Buaya|Ceri|Domba
