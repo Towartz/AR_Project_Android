@@ -45,7 +45,9 @@
 
 # Temporary backup assets, not required for the runnable project.
 /Assets/TTS_SYNTH_BACKUP_20260430/
+/Assets/TTS_SYNTH_BACKUP_20260430.meta
 /Assets/TTS_CASE_DUPLICATE_BACKUP_20260430/
+/Assets/TTS_CASE_DUPLICATE_BACKUP_20260430.meta
 
 # OS files
 .DS_Store
