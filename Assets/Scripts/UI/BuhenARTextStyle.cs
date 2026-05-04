@@ -143,14 +143,6 @@ namespace ARtiGraf.UI
             BuhenARTextStyle.ApplyRuntimeDefaults(text);
             if (scaledTexts.Contains(text)) return;
             scaledTexts.Add(text);
-
-            if (text.fontSize > 0)
-                text.fontSize = BuhenARTextStyle.ScaleSize(text.fontSize, 1.06f);
-            if (text.resizeTextForBestFit)
-            {
-                text.resizeTextMaxSize = BuhenARTextStyle.ScaleSize(text.resizeTextMaxSize, 1.06f);
-                text.resizeTextMinSize = Mathf.Max(text.resizeTextMinSize, BuhenARTextStyle.MinimumReadableSize);
-            }
         }
     }
 }

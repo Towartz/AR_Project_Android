@@ -1541,7 +1541,7 @@ public static class ARtiGrafProjectBuilder
         ButtonParts backButton = CreateButton("BackButton", topBar.transform, "Kembali", Accent, Color.white);
         AnchorToCorner(backButton.button.GetComponent<RectTransform>(), new Vector2(0f, 0.5f), new Vector2(20f, 0f), new Vector2(192f, 72f));
         backButton.label.fontSize = 26;
-        UnityEventTools.AddPersistentListener(backButton.button.onClick, navigation.OpenMaterialSelect);
+        UnityEventTools.AddPersistentListener(backButton.button.onClick, navigation.OpenARBackDestination);
 
         // Help button - right side
         ButtonParts helpButton = CreateButton("HelpButton", topBar.transform, "Bantuan", Primary, Color.white);

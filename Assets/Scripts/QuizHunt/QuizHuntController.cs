@@ -26,6 +26,9 @@ namespace ARtiGraf.QuizHunt
         [SerializeField] Text progressText;
         [SerializeField] Text timerText;
         [SerializeField] Text scoreText;
+        [SerializeField] Text pointsValueText;
+        [SerializeField] Text correctValueText;
+        [SerializeField] Text streakValueText;
         [SerializeField] GameObject hintPanel;
         [SerializeField] Text hintText;
         [SerializeField] Image clueImage;
@@ -234,9 +237,7 @@ namespace ARtiGraf.QuizHunt
             if (string.IsNullOrWhiteSpace(description))
                 description = "Aku ada di salah satu kartu " + AppSession.GetCategoryLabel(c.Category).ToLowerInvariant() + ".";
 
-            return "MISI RAHASIA\n\n"
-                 + description + "\n\n"
-                 + "Cari dan scan kartu yang cocok.";
+            return description;
         }
 
         static string BuildSubClue(MaterialContentData c)
@@ -341,13 +342,22 @@ namespace ARtiGraf.QuizHunt
         void RefreshProgressText()
         {
             if (progressText != null)
-                progressText.text = "Misi " + (currentIndex + 1) + " / " + questions.Count;
+                progressText.text = (currentIndex + 1) + " / " + questions.Count;
         }
 
         void RefreshScoreText()
         {
-            if (scoreText != null)
-                scoreText.text = "Poin: " + score + "   Benar: " + correctCount + "   Streak: " + streak;
+            if (pointsValueText != null || correctValueText != null || streakValueText != null)
+            {
+                if (pointsValueText != null) pointsValueText.text = score.ToString();
+                if (correctValueText != null) correctValueText.text = correctCount.ToString();
+                if (streakValueText != null) streakValueText.text = streak.ToString();
+                if (scoreText != null) scoreText.text = string.Empty;
+            }
+            else if (scoreText != null)
+            {
+                scoreText.text = "Poin " + score + "  |  Benar " + correctCount + "  |  Streak " + streak;
+            }
         }
 
         IEnumerator TimerRoutine()
@@ -563,31 +573,40 @@ namespace ARtiGraf.QuizHunt
                 : null;
 
             SetAnchors(GetRect(clueText),
-                portrait ? new Vector2(0.055f, 0.30f) : new Vector2(0.06f, 0.31f),
-                portrait ? new Vector2(0.945f, 0.94f) : new Vector2(0.94f, 0.94f));
+                portrait ? new Vector2(0.07f, 0.45f) : new Vector2(0.06f, 0.42f),
+                portrait ? new Vector2(0.93f, 0.88f) : new Vector2(0.94f, 0.90f));
             SetAnchors(GetRect(clueSubText),
-                portrait ? new Vector2(0.065f, 0.055f) : new Vector2(0.07f, 0.055f),
-                portrait ? new Vector2(0.935f, 0.29f) : new Vector2(0.93f, 0.29f));
+                portrait ? new Vector2(0.06f, 0.02f) : new Vector2(0.06f, 0.02f),
+                portrait ? new Vector2(0.94f, 0.25f) : new Vector2(0.94f, 0.25f));
             SetAnchors(cluePanel,
-                portrait ? new Vector2(compact ? 0.045f : 0.06f, 0.53f) : new Vector2(0.16f, 0.48f),
-                portrait ? new Vector2(compact ? 0.955f : 0.94f, 0.805f) : new Vector2(0.84f, 0.80f));
+                portrait ? new Vector2(0.13f, 0.435f) : new Vector2(0.145f, 0.345f),
+                portrait ? new Vector2(0.87f, 0.695f) : new Vector2(0.60f, 0.66f));
             SetAnchors(GetRect(progressText),
-                portrait ? new Vector2(0.18f, 0.83f) : new Vector2(0.25f, 0.83f),
-                portrait ? new Vector2(0.82f, 0.88f) : new Vector2(0.75f, 0.88f));
+                portrait ? new Vector2(0.40f, 0.735f) : new Vector2(0.43f, 0.765f),
+                portrait ? new Vector2(0.60f, 0.775f) : new Vector2(0.57f, 0.84f));
             SetAnchors(GetRect(scoreText),
-                portrait ? new Vector2(0.08f, 0.458f) : new Vector2(0.20f, 0.402f),
-                portrait ? new Vector2(0.92f, 0.512f) : new Vector2(0.80f, 0.464f));
+                portrait ? new Vector2(0.07f, 0.287f) : new Vector2(0.63f, 0.39f),
+                portrait ? new Vector2(0.93f, 0.355f) : new Vector2(0.93f, 0.735f));
+            SetAnchors(GetRect(pointsValueText),
+                portrait ? new Vector2(0.205f, 0.300f) : new Vector2(0.710f, 0.662f),
+                portrait ? new Vector2(0.305f, 0.330f) : new Vector2(0.775f, 0.715f));
+            SetAnchors(GetRect(correctValueText),
+                portrait ? new Vector2(0.505f, 0.300f) : new Vector2(0.710f, 0.535f),
+                portrait ? new Vector2(0.595f, 0.330f) : new Vector2(0.775f, 0.588f));
+            SetAnchors(GetRect(streakValueText),
+                portrait ? new Vector2(0.792f, 0.300f) : new Vector2(0.710f, 0.408f),
+                portrait ? new Vector2(0.890f, 0.330f) : new Vector2(0.775f, 0.461f));
             SetAnchors(GetRect(timerText),
-                portrait ? new Vector2(0.08f, 0.402f) : new Vector2(0.20f, 0.354f),
-                portrait ? new Vector2(0.92f, 0.456f) : new Vector2(0.80f, 0.408f));
+                portrait ? new Vector2(0.08f, 0.245f) : new Vector2(0.64f, 0.30f),
+                portrait ? new Vector2(0.92f, 0.285f) : new Vector2(0.92f, 0.36f));
             SetAnchors(GetRect(clueImage),
-                portrait ? new Vector2(compact ? 0.32f : 0.35f, 0.315f) : new Vector2(0.39f, 0.27f),
-                portrait ? new Vector2(compact ? 0.68f : 0.65f, 0.455f) : new Vector2(0.61f, 0.45f));
+                portrait ? new Vector2(0.36f, 0.445f) : new Vector2(0.30f, 0.43f),
+                portrait ? new Vector2(0.64f, 0.565f) : new Vector2(0.45f, 0.58f));
 
             RectTransform hintRect = hintPanel != null ? hintPanel.GetComponent<RectTransform>() : null;
             SetAnchors(hintRect,
-                portrait ? new Vector2(0.07f, 0.245f) : new Vector2(0.20f, 0.22f),
-                portrait ? new Vector2(0.93f, 0.325f) : new Vector2(0.80f, 0.32f));
+                portrait ? new Vector2(0.14f, 0.385f) : new Vector2(0.15f, 0.225f),
+                portrait ? new Vector2(0.86f, 0.44f) : new Vector2(0.59f, 0.34f));
 
             SetAnchors(GetRect(hintText), new Vector2(0.05f, 0.10f), new Vector2(0.95f, 0.90f));
 
@@ -597,22 +616,25 @@ namespace ARtiGraf.QuizHunt
             Button menuButton = FindNamedButton("MenuButton");
 
             SetAnchors(GetRect(scanButton),
-                portrait ? new Vector2(compact ? 0.10f : 0.14f, 0.155f) : new Vector2(0.26f, 0.12f),
-                portrait ? new Vector2(compact ? 0.90f : 0.86f, 0.23f) : new Vector2(0.74f, 0.20f));
+                portrait ? new Vector2(0.10f, 0.15f) : new Vector2(0.62f, 0.215f),
+                portrait ? new Vector2(0.90f, 0.276f) : new Vector2(0.947f, 0.378f));
             SetAnchors(GetRect(hintButton),
-                portrait ? new Vector2(0.07f, 0.055f) : new Vector2(0.18f, 0.045f),
-                portrait ? new Vector2(0.34f, 0.125f) : new Vector2(0.38f, 0.105f));
+                portrait ? new Vector2(0.065f, 0.055f) : new Vector2(0.27f, 0.04f),
+                portrait ? new Vector2(0.33f, 0.14f) : new Vector2(0.44f, 0.175f));
             SetAnchors(GetRect(skipButton),
-                portrait ? new Vector2(0.365f, 0.055f) : new Vector2(0.40f, 0.045f),
-                portrait ? new Vector2(0.635f, 0.125f) : new Vector2(0.60f, 0.105f));
+                portrait ? new Vector2(0.365f, 0.055f) : new Vector2(0.455f, 0.04f),
+                portrait ? new Vector2(0.635f, 0.14f) : new Vector2(0.615f, 0.175f));
             SetAnchors(GetRect(menuButton),
-                portrait ? new Vector2(0.66f, 0.055f) : new Vector2(0.62f, 0.045f),
-                portrait ? new Vector2(0.93f, 0.125f) : new Vector2(0.82f, 0.105f));
+                portrait ? new Vector2(0.67f, 0.055f) : new Vector2(0.63f, 0.04f),
+                portrait ? new Vector2(0.935f, 0.14f) : new Vector2(0.80f, 0.175f));
 
-            ConfigureText(clueText, portrait ? (compact ? 36 : 40) : 42, compact ? 25 : 26, TextAnchor.MiddleCenter);
-            ConfigureText(clueSubText, portrait ? (compact ? 26 : 28) : 30, 21, TextAnchor.MiddleCenter);
-            ConfigureText(progressText, portrait ? 31 : 32, compact ? 20 : 21, TextAnchor.MiddleCenter);
-            ConfigureText(scoreText, portrait ? 27 : 29, 19, TextAnchor.MiddleCenter);
+            ConfigureText(clueText, portrait ? (compact ? 27 : 30) : 32, compact ? 20 : 21, TextAnchor.MiddleCenter);
+            ConfigureText(clueSubText, portrait ? (compact ? 18 : 20) : 22, 16, TextAnchor.MiddleCenter);
+            ConfigureText(progressText, portrait ? 21 : 24, 16, TextAnchor.MiddleCenter);
+            ConfigureText(scoreText, portrait ? 24 : 25, 16, TextAnchor.MiddleCenter);
+            ConfigureText(pointsValueText, portrait ? 20 : 22, 15, TextAnchor.MiddleCenter);
+            ConfigureText(correctValueText, portrait ? 20 : 22, 15, TextAnchor.MiddleCenter);
+            ConfigureText(streakValueText, portrait ? 20 : 22, 15, TextAnchor.MiddleCenter);
             ConfigureText(timerText, portrait ? 27 : 29, 19, TextAnchor.MiddleCenter);
             ConfigureText(hintText, portrait ? (compact ? 25 : 27) : 29, 21, TextAnchor.MiddleCenter);
             ConfigureText(successTitleText, portrait ? 34 : 36, 22, TextAnchor.MiddleCenter);

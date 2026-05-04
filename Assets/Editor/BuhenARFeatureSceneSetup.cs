@@ -24,6 +24,13 @@ public static class BuhenARFeatureSceneSetup
     const string CollectionScenePath = ScenesFolder + "/CollectionScene.unity";
     const string QuizHuntScenePath = ScenesFolder + "/QuizHuntScene.unity";
     const string ContentLibraryPath = "Assets/Resources/ARtiGrafContentLibrary.asset";
+    const string UiAppsFolder = "Assets/Art/UI_APPS";
+    const string SelectionMenuArtworkPath = UiAppsFolder + "/Selection_menu.png";
+    const string SelectionMenuLandscapeArtworkPath = UiAppsFolder + "/Selection_menu_landscape.png";
+    const string CollectionArtworkPath = UiAppsFolder + "/Koleksi.png";
+    const string CollectionLandscapeArtworkPath = UiAppsFolder + "/koleksi_landscape.png";
+    const string QuizHuntPortraitArtworkPath = UiAppsFolder + "/quiz_hunt.png";
+    const string QuizHuntLandscapeArtworkPath = UiAppsFolder + "/quiz_hunt_landscape.png";
 
     static readonly Color Navy = new Color32(7, 18, 46, 255);
     static readonly Color Blue = new Color32(9, 69, 190, 255);
@@ -58,6 +65,7 @@ public static class BuhenARFeatureSceneSetup
         ARImageTrackingController scanner = FindSceneObject<ARImageTrackingController>();
         UIOverlayController overlay = FindSceneObject<UIOverlayController>();
         ARLearningFeedbackController feedback = FindSceneObject<ARLearningFeedbackController>();
+        SceneNavigationController navigation = FindSceneObject<SceneNavigationController>();
         if (scanner == null) return;
 
         ARTouchInteractionController touch = scanner.GetComponent<ARTouchInteractionController>();
@@ -78,6 +86,15 @@ public static class BuhenARFeatureSceneSetup
         }
 
         RectTransform flashRect = EnsureFlashButton(scanner);
+        if (navigation != null)
+        {
+            foreach (Button button in FindSceneButtonsNamed("BackButton"))
+            {
+                ClearButtonClick(button);
+                UnityEventTools.AddPersistentListener(button.onClick, navigation.OpenARBackDestination);
+            }
+        }
+
         if (overlay != null)
         {
             SerializedObject overlayObject = new SerializedObject(overlay);
@@ -151,28 +168,53 @@ public static class BuhenARFeatureSceneSetup
         if (controller == null) controller = canvas.gameObject.AddComponent<PlayModeOptionsController>();
 
         DestroySceneObjectsNamed("PlayModeOptionsOverlay");
-        GameObject overlay = CreatePlayModeOptionsOverlay(canvas.transform, controller);
-        overlay.transform.SetAsLastSibling();
+        DestroySceneObjectsNamed("SelectionMenuRoot");
+        DestroySceneObjectsNamed("MaterialGuidePortraitRoot");
+        DestroySceneObjectsNamed("MaterialGuideLandscapeRoot");
+        GameObject selectionRoot = CreateSelectionMenuRoot(canvas.transform, navigation, controller);
+        selectionRoot.transform.SetAsLastSibling();
 
         SerializedObject controllerObject = new SerializedObject(controller);
-        controllerObject.FindProperty("optionsPanel").objectReferenceValue = overlay;
+        controllerObject.FindProperty("optionsPanel").objectReferenceValue = null;
         controllerObject.FindProperty("navigator").objectReferenceValue = navigation;
+        SerializedProperty hideOnAwake = controllerObject.FindProperty("hideOnAwake");
+        if (hideOnAwake != null) hideOnAwake.boolValue = false;
         controllerObject.ApplyModifiedPropertiesWithoutUndo();
-
-        int wiredCount = 0;
-        foreach (Button button in FindSceneButtonsNamed("AyoBermainHotspot"))
-        {
-            ClearButtonClick(button);
-            UnityEventTools.AddPersistentListener(button.onClick, controller.ShowOptions);
-            wiredCount++;
-        }
-
-        if (wiredCount == 0)
-            Debug.LogWarning("[BuhenAR] AyoBermainHotspot tidak ditemukan di MaterialSelectScene.");
-
-        overlay.SetActive(false);
         EditorSceneManager.MarkSceneDirty(scene);
         EditorSceneManager.SaveScene(scene);
+    }
+
+    static GameObject CreateSelectionMenuRoot(Transform parent, SceneNavigationController navigation, PlayModeOptionsController controller)
+    {
+        Sprite portraitArtwork = LoadUiSprite(SelectionMenuArtworkPath);
+        Sprite landscapeArtwork = LoadUiSprite(SelectionMenuLandscapeArtworkPath);
+        GameObject frame = CreateResponsiveArtworkFrame(parent, "SelectionMenuRoot", portraitArtwork, landscapeArtwork);
+
+        GameObject portraitHotspots = CreateFullRect(frame.transform, "SelectionPortraitHotspots");
+        GameObject landscapeHotspots = CreateFullRect(frame.transform, "SelectionLandscapeHotspots");
+
+        CreateTransparentButton(portraitHotspots.transform, "ScanAROptionButton",
+            new Vector2(0.14f, 0.48f), new Vector2(0.86f, 0.595f), controller.OpenAR);
+        CreateTransparentButton(portraitHotspots.transform, "CollectionOptionButton",
+            new Vector2(0.14f, 0.355f), new Vector2(0.86f, 0.472f), controller.OpenCollection);
+        CreateTransparentButton(portraitHotspots.transform, "HuntOptionButton",
+            new Vector2(0.14f, 0.228f), new Vector2(0.86f, 0.345f), controller.OpenQuizHunt);
+        CreateTransparentButton(portraitHotspots.transform, "CloseOptionsButton",
+            new Vector2(0.14f, 0.10f), new Vector2(0.86f, 0.218f), navigation.OpenMainMenu);
+
+        CreateTransparentButton(landscapeHotspots.transform, "ScanAROptionButton",
+            new Vector2(0.125f, 0.382f), new Vector2(0.49f, 0.585f), controller.OpenAR);
+        CreateTransparentButton(landscapeHotspots.transform, "CollectionOptionButton",
+            new Vector2(0.505f, 0.382f), new Vector2(0.875f, 0.585f), controller.OpenCollection);
+        CreateTransparentButton(landscapeHotspots.transform, "HuntOptionButton",
+            new Vector2(0.125f, 0.155f), new Vector2(0.49f, 0.362f), controller.OpenQuizHunt);
+        CreateTransparentButton(landscapeHotspots.transform, "CloseOptionsButton",
+            new Vector2(0.505f, 0.155f), new Vector2(0.875f, 0.362f), navigation.OpenMainMenu);
+
+        ResponsiveLayoutController layout = frame.AddComponent<ResponsiveLayoutController>();
+        layout.Configure(portraitHotspots, landscapeHotspots);
+
+        return frame;
     }
 
     static void UpgradeQuizSceneNavigation()
@@ -204,7 +246,9 @@ public static class BuhenARFeatureSceneSetup
         CreateUiCamera();
         CreateEventSystem();
         Canvas canvas = CreateCanvas("Canvas");
-        CreatePanel(canvas.transform, "Background", Navy, Vector2.zero, Vector2.one);
+        Sprite portraitArtwork = LoadUiSprite(CollectionArtworkPath);
+        Sprite landscapeArtwork = LoadUiSprite(CollectionLandscapeArtworkPath);
+        GameObject frame = CreateResponsiveArtworkFrame(canvas.transform, "CollectionArtworkFrame", portraitArtwork, landscapeArtwork);
 
         SceneNavigationController navigation = canvas.gameObject.AddComponent<SceneNavigationController>();
         CollectionManager manager = canvas.gameObject.AddComponent<CollectionManager>();
@@ -212,26 +256,21 @@ public static class BuhenARFeatureSceneSetup
         canvas.gameObject.AddComponent<AudioSource>();
         _ = tts;
 
-        Text title = CreateText(canvas.transform, "Title", "Koleksi Buah & Hewan", 44, FontStyle.Bold, TextAnchor.MiddleCenter, Color.white);
-        SetAnchors(title.rectTransform, new Vector2(0.06f, 0.9f), new Vector2(0.94f, 0.98f));
+        Text totalText = CreateText(frame.transform, "TotalDiscoveredText", "", 22, FontStyle.Bold, TextAnchor.MiddleCenter, Color.white);
+        SetAnchors(totalText.rectTransform, new Vector2(0.31f, 0.807f), new Vector2(0.69f, 0.846f));
 
-        Text totalText = CreateText(canvas.transform, "TotalDiscoveredText", "", 24, FontStyle.Bold, TextAnchor.MiddleCenter, Cream);
-        SetAnchors(totalText.rectTransform, new Vector2(0.18f, 0.84f), new Vector2(0.82f, 0.89f));
-
-        Button back = CreateButton(canvas.transform, "BackButton", "Kembali", Orange, Color.white, 24, out _, out _).GetComponent<Button>();
-        RectTransform backRect = back.GetComponent<RectTransform>();
-        SetAnchors(backRect, new Vector2(0.04f, 0.91f), new Vector2(0.22f, 0.975f));
-        UnityEventTools.AddPersistentListener(back.onClick, navigation.OpenMaterialSelect);
+        CreateTransparentButton(frame.transform, "BackButton",
+            new Vector2(0.065f, 0.912f), new Vector2(0.305f, 0.965f), navigation.OpenMaterialSelect);
 
         GameObject scrollRoot = new GameObject("ScrollView", typeof(RectTransform), typeof(Image), typeof(ScrollRect));
-        scrollRoot.transform.SetParent(canvas.transform, false);
-        SetAnchors(scrollRoot.GetComponent<RectTransform>(), new Vector2(0.05f, 0.08f), new Vector2(0.95f, 0.82f));
-        scrollRoot.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.10f);
+        scrollRoot.transform.SetParent(frame.transform, false);
+        SetAnchors(scrollRoot.GetComponent<RectTransform>(), new Vector2(0.19f, 0.13f), new Vector2(0.81f, 0.78f));
+        scrollRoot.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0f);
 
         GameObject viewport = new GameObject("Viewport", typeof(RectTransform), typeof(Image), typeof(Mask));
         viewport.transform.SetParent(scrollRoot.transform, false);
         SetAnchors(viewport.GetComponent<RectTransform>(), Vector2.zero, Vector2.one);
-        viewport.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.02f);
+        viewport.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.01f);
         viewport.GetComponent<Mask>().showMaskGraphic = false;
 
         GameObject content = new GameObject("Content", typeof(RectTransform), typeof(GridLayoutGroup), typeof(ContentSizeFitter));
@@ -243,11 +282,11 @@ public static class BuhenARFeatureSceneSetup
         contentRect.offsetMin = Vector2.zero;
         contentRect.offsetMax = Vector2.zero;
         GridLayoutGroup grid = content.GetComponent<GridLayoutGroup>();
-        grid.cellSize = new Vector2(150f, 198f);
-        grid.spacing = new Vector2(14f, 18f);
-        grid.padding = new RectOffset(18, 18, 18, 18);
+        grid.cellSize = new Vector2(118f, 154f);
+        grid.spacing = new Vector2(12f, 12f);
+        grid.padding = new RectOffset(12, 12, 12, 12);
         grid.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
-        grid.constraintCount = 3;
+        grid.constraintCount = 4;
         ContentSizeFitter fitter = content.GetComponent<ContentSizeFitter>();
         fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
 
@@ -257,9 +296,9 @@ public static class BuhenARFeatureSceneSetup
         scroll.horizontal = false;
         scroll.vertical = true;
 
-        GameObject template = CreateCollectionItemTemplate(canvas.transform);
+        GameObject template = CreateCollectionItemTemplate(frame.transform);
         template.SetActive(false);
-        CollectionDetailPopup popup = CreateCollectionPopup(canvas.transform);
+        CollectionDetailPopup popup = CreateCollectionPopup(frame.transform);
 
         SerializedObject managerObject = new SerializedObject(manager);
         managerObject.FindProperty("library").objectReferenceValue = AssetDatabase.LoadAssetAtPath<MaterialContentLibrary>(ContentLibraryPath);
@@ -278,57 +317,54 @@ public static class BuhenARFeatureSceneSetup
         CreateUiCamera();
         CreateEventSystem();
         Canvas canvas = CreateCanvas("Canvas");
-        CreatePanel(canvas.transform, "Background", new Color32(255, 246, 218, 255), Vector2.zero, Vector2.one);
+        Sprite portraitArtwork = LoadUiSprite(QuizHuntPortraitArtworkPath);
+        Sprite landscapeArtwork = LoadUiSprite(QuizHuntLandscapeArtworkPath);
+        GameObject frame = CreateResponsiveArtworkFrame(canvas.transform, "QuizHuntArtworkFrame", portraitArtwork, landscapeArtwork);
 
         SceneNavigationController navigation = canvas.gameObject.AddComponent<SceneNavigationController>();
         QuizHuntController hunt = canvas.gameObject.AddComponent<QuizHuntController>();
 
-        Text title = CreateText(canvas.transform, "Title", "Quiz Hunt", 48, FontStyle.Bold, TextAnchor.MiddleCenter, Navy);
-        SetAnchors(title.rectTransform, new Vector2(0.08f, 0.9f), new Vector2(0.92f, 0.98f));
+        Text progress = CreateText(frame.transform, "ProgressText", "", 21, FontStyle.Bold, TextAnchor.MiddleCenter, Blue);
+        SetAnchors(progress.rectTransform, new Vector2(0.40f, 0.735f), new Vector2(0.60f, 0.775f));
 
-        Text progress = CreateText(canvas.transform, "ProgressText", "", 24, FontStyle.Bold, TextAnchor.MiddleCenter, Blue);
-        SetAnchors(progress.rectTransform, new Vector2(0.18f, 0.84f), new Vector2(0.82f, 0.89f));
+        GameObject cluePanel = CreatePanel(frame.transform, "CluePanel", new Color(1f, 1f, 1f, 0f), new Vector2(0.13f, 0.435f), new Vector2(0.87f, 0.695f));
+        Text clue = CreateText(cluePanel.transform, "ClueText", "", 27, FontStyle.Bold, TextAnchor.MiddleCenter, Navy);
+        SetAnchors(clue.rectTransform, new Vector2(0.07f, 0.45f), new Vector2(0.93f, 0.88f));
+        Text subClue = CreateText(cluePanel.transform, "ClueSubText", "", 18, FontStyle.Bold, TextAnchor.MiddleCenter, Orange);
+        SetAnchors(subClue.rectTransform, new Vector2(0.06f, 0.02f), new Vector2(0.94f, 0.25f));
 
-        GameObject cluePanel = CreatePanel(canvas.transform, "CluePanel", SoftPanel, new Vector2(0.06f, 0.48f), new Vector2(0.94f, 0.82f));
-        Text clue = CreateText(cluePanel.transform, "ClueText", "", 31, FontStyle.Bold, TextAnchor.MiddleCenter, Navy);
-        SetAnchors(clue.rectTransform, new Vector2(0.06f, 0.34f), new Vector2(0.94f, 0.94f));
-        Text subClue = CreateText(cluePanel.transform, "ClueSubText", "", 22, FontStyle.Bold, TextAnchor.MiddleCenter, Orange);
-        SetAnchors(subClue.rectTransform, new Vector2(0.06f, 0.08f), new Vector2(0.94f, 0.32f));
+        Text score = CreateText(frame.transform, "ScoreText", "", 24, FontStyle.Bold, TextAnchor.MiddleCenter, Navy);
+        SetAnchors(score.rectTransform, new Vector2(0.07f, 0.287f), new Vector2(0.93f, 0.355f));
+        Text pointsValue = CreateText(frame.transform, "PointsValueText", "0", 20, FontStyle.Bold, TextAnchor.MiddleCenter, Navy);
+        SetAnchors(pointsValue.rectTransform, new Vector2(0.205f, 0.300f), new Vector2(0.305f, 0.330f));
+        Text correctValue = CreateText(frame.transform, "CorrectValueText", "0", 20, FontStyle.Bold, TextAnchor.MiddleCenter, Navy);
+        SetAnchors(correctValue.rectTransform, new Vector2(0.505f, 0.300f), new Vector2(0.595f, 0.330f));
+        Text streakValue = CreateText(frame.transform, "StreakValueText", "0", 20, FontStyle.Bold, TextAnchor.MiddleCenter, Navy);
+        SetAnchors(streakValue.rectTransform, new Vector2(0.792f, 0.300f), new Vector2(0.890f, 0.330f));
+        Text timer = CreateText(frame.transform, "TimerText", "", 24, FontStyle.Bold, TextAnchor.MiddleCenter, Orange);
+        SetAnchors(timer.rectTransform, new Vector2(0.08f, 0.245f), new Vector2(0.92f, 0.285f));
 
-        Text score = CreateText(canvas.transform, "ScoreText", "", 24, FontStyle.Bold, TextAnchor.MiddleCenter, Navy);
-        SetAnchors(score.rectTransform, new Vector2(0.1f, 0.42f), new Vector2(0.9f, 0.47f));
-        Text timer = CreateText(canvas.transform, "TimerText", "", 24, FontStyle.Bold, TextAnchor.MiddleCenter, Orange);
-        SetAnchors(timer.rectTransform, new Vector2(0.1f, 0.37f), new Vector2(0.9f, 0.42f));
-
-        GameObject hintPanel = CreatePanel(canvas.transform, "HintPanel", new Color32(255, 230, 153, 245), new Vector2(0.08f, 0.27f), new Vector2(0.92f, 0.36f));
+        GameObject hintPanel = CreatePanel(frame.transform, "HintPanel", new Color32(255, 255, 255, 18), new Vector2(0.14f, 0.385f), new Vector2(0.86f, 0.44f));
         Text hintText = CreateText(hintPanel.transform, "HintText", "", 21, FontStyle.Bold, TextAnchor.MiddleCenter, Navy);
         SetAnchors(hintText.rectTransform, new Vector2(0.04f, 0.08f), new Vector2(0.96f, 0.92f));
         hintPanel.SetActive(false);
 
-        Button scan = CreateButton(canvas.transform, "ScanButton", "Scan Sekarang", Orange, Color.white, 30, out _, out _).GetComponent<Button>();
-        SetAnchors(scan.GetComponent<RectTransform>(), new Vector2(0.14f, 0.16f), new Vector2(0.86f, 0.25f));
-        UnityEventTools.AddPersistentListener(scan.onClick, hunt.OnScanButtonPressed);
+        CreateTransparentButton(frame.transform, "ScanButton", new Vector2(0.10f, 0.15f), new Vector2(0.90f, 0.276f), hunt.OnScanButtonPressed);
 
-        Button hint = CreateButton(canvas.transform, "HintButton", "Petunjuk", Blue, Color.white, 25, out _, out _).GetComponent<Button>();
-        SetAnchors(hint.GetComponent<RectTransform>(), new Vector2(0.08f, 0.06f), new Vector2(0.35f, 0.13f));
-        UnityEventTools.AddPersistentListener(hint.onClick, hunt.OnShowHintPressed);
+        CreateTransparentButton(frame.transform, "HintButton", new Vector2(0.065f, 0.055f), new Vector2(0.33f, 0.14f), hunt.OnShowHintPressed);
 
-        Button skip = CreateButton(canvas.transform, "SkipButton", "Lewati", new Color32(128, 85, 30, 255), Color.white, 25, out _, out _).GetComponent<Button>();
-        SetAnchors(skip.GetComponent<RectTransform>(), new Vector2(0.365f, 0.06f), new Vector2(0.635f, 0.13f));
-        UnityEventTools.AddPersistentListener(skip.onClick, hunt.OnSkipPressed);
+        CreateTransparentButton(frame.transform, "SkipButton", new Vector2(0.365f, 0.055f), new Vector2(0.635f, 0.14f), hunt.OnSkipPressed);
 
-        Button menu = CreateButton(canvas.transform, "MenuButton", "Pilih Mode", Navy, Color.white, 25, out _, out _).GetComponent<Button>();
-        SetAnchors(menu.GetComponent<RectTransform>(), new Vector2(0.65f, 0.06f), new Vector2(0.92f, 0.13f));
-        UnityEventTools.AddPersistentListener(menu.onClick, hunt.OnMainMenuPressed);
+        CreateTransparentButton(frame.transform, "MenuButton", new Vector2(0.67f, 0.055f), new Vector2(0.935f, 0.14f), hunt.OnMainMenuPressed);
 
         Text successTitle;
         Text successDesc;
-        GameObject successPanel = CreateMessagePanel(canvas.transform, "SuccessPanel", new Color32(220, 252, 231, 250), "Benar!", out successTitle, out successDesc);
+        GameObject successPanel = CreateMessagePanel(frame.transform, "SuccessPanel", new Color32(220, 252, 231, 250), "Benar!", out successTitle, out successDesc);
         Text failText;
-        GameObject failPanel = CreateSingleTextPanel(canvas.transform, "FailPanel", new Color32(254, 226, 226, 250), out failText);
+        GameObject failPanel = CreateSingleTextPanel(frame.transform, "FailPanel", new Color32(254, 226, 226, 250), out failText);
         Text resultScore;
         Text resultStars;
-        GameObject resultPanel = CreateResultPanel(canvas.transform, out resultScore, out resultStars, hunt);
+        GameObject resultPanel = CreateResultPanel(frame.transform, out resultScore, out resultStars, hunt);
 
         SerializedObject huntObject = new SerializedObject(hunt);
         huntObject.FindProperty("library").objectReferenceValue = AssetDatabase.LoadAssetAtPath<MaterialContentLibrary>(ContentLibraryPath);
@@ -337,6 +373,9 @@ public static class BuhenARFeatureSceneSetup
         huntObject.FindProperty("progressText").objectReferenceValue = progress;
         huntObject.FindProperty("timerText").objectReferenceValue = timer;
         huntObject.FindProperty("scoreText").objectReferenceValue = score;
+        huntObject.FindProperty("pointsValueText").objectReferenceValue = pointsValue;
+        huntObject.FindProperty("correctValueText").objectReferenceValue = correctValue;
+        huntObject.FindProperty("streakValueText").objectReferenceValue = streakValue;
         huntObject.FindProperty("hintPanel").objectReferenceValue = hintPanel;
         huntObject.FindProperty("hintText").objectReferenceValue = hintText;
         huntObject.FindProperty("successPanel").objectReferenceValue = successPanel;
@@ -581,6 +620,79 @@ public static class BuhenARFeatureSceneSetup
         panel.GetComponent<Image>().color = color;
         SetAnchors(panel.GetComponent<RectTransform>(), anchorMin, anchorMax);
         return panel;
+    }
+
+    static GameObject CreateResponsiveArtworkFrame(Transform parent, string name, Sprite portraitSprite, Sprite landscapeSprite)
+    {
+        GameObject frameObject = new GameObject(name, typeof(RectTransform), typeof(AspectRatioFitter), typeof(ResponsiveArtworkFrame));
+        frameObject.transform.SetParent(parent, false);
+        SetAnchors(frameObject.GetComponent<RectTransform>(), Vector2.zero, Vector2.one);
+
+        AspectRatioFitter fitter = frameObject.GetComponent<AspectRatioFitter>();
+        fitter.aspectMode = AspectRatioFitter.AspectMode.FitInParent;
+        fitter.aspectRatio = portraitSprite != null && portraitSprite.rect.height > 0f
+            ? portraitSprite.rect.width / portraitSprite.rect.height
+            : 9f / 16f;
+
+        GameObject imageObject = new GameObject("Artwork", typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
+        imageObject.transform.SetParent(frameObject.transform, false);
+        SetAnchors(imageObject.GetComponent<RectTransform>(), Vector2.zero, Vector2.one);
+        Image image = imageObject.GetComponent<Image>();
+        image.sprite = portraitSprite;
+        image.color = Color.white;
+        image.preserveAspect = true;
+        image.raycastTarget = false;
+
+        ResponsiveArtworkFrame responsive = frameObject.GetComponent<ResponsiveArtworkFrame>();
+        responsive.Configure(image, fitter, portraitSprite, landscapeSprite);
+        EditorUtility.SetDirty(responsive);
+        return frameObject;
+    }
+
+    static GameObject CreateFullRect(Transform parent, string name)
+    {
+        GameObject root = new GameObject(name, typeof(RectTransform));
+        root.transform.SetParent(parent, false);
+        SetAnchors(root.GetComponent<RectTransform>(), Vector2.zero, Vector2.one);
+        return root;
+    }
+
+    static Button CreateTransparentButton(Transform parent, string name, Vector2 anchorMin, Vector2 anchorMax,
+                                          UnityEngine.Events.UnityAction action)
+    {
+        GameObject buttonObject = new GameObject(name, typeof(RectTransform), typeof(CanvasRenderer), typeof(Image), typeof(Button));
+        buttonObject.transform.SetParent(parent, false);
+        SetAnchors(buttonObject.GetComponent<RectTransform>(), anchorMin, anchorMax);
+
+        Image image = buttonObject.GetComponent<Image>();
+        image.color = new Color(1f, 1f, 1f, 0f);
+        image.raycastTarget = true;
+
+        Button button = buttonObject.GetComponent<Button>();
+        UnityEventTools.AddPersistentListener(button.onClick, action);
+        return button;
+    }
+
+    static Sprite LoadUiSprite(string path)
+    {
+        if (!System.IO.File.Exists(path))
+        {
+            Debug.LogWarning("[BuhenAR] UI artwork tidak ditemukan: " + path);
+            return null;
+        }
+
+        AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceSynchronousImport);
+        TextureImporter importer = AssetImporter.GetAtPath(path) as TextureImporter;
+        if (importer != null && importer.textureType != TextureImporterType.Sprite)
+        {
+            importer.textureType = TextureImporterType.Sprite;
+            importer.spriteImportMode = SpriteImportMode.Single;
+            importer.mipmapEnabled = false;
+            importer.alphaIsTransparency = false;
+            importer.SaveAndReimport();
+        }
+
+        return AssetDatabase.LoadAssetAtPath<Sprite>(path);
     }
 
     static Image CreateImage(Transform parent, string name, Color color)

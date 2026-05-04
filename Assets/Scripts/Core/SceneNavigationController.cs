@@ -83,6 +83,19 @@ namespace ARtiGraf.Core
         public void RestartQuiz()        => LoadScene(quizHuntSceneName);
         public void OpenCollection()     => LoadScene(collectionSceneName);
         public void OpenQuizHunt()       => LoadScene(quizHuntSceneName);
+        public void OpenARBackDestination()
+        {
+            if (AppSession.IsQuizHuntActive ||
+                AppSession.HasQuizHuntSession ||
+                AppSession.HasQuizHuntPendingScanResult)
+            {
+                OpenQuizHunt();
+                return;
+            }
+
+            OpenMaterialSelect();
+        }
+
         public void OpenQuizHuntFruits()
         {
             AppSession.SelectCategory(LearningCategory.Typography);
@@ -266,7 +279,9 @@ namespace ARtiGraf.Core
                 fadeImage = imageObject.AddComponent<Image>();
                 fadeColor.a = 0f;
                 fadeImage.color = fadeColor;
-                fadeImage.raycastTarget = true;
+                // Do not let a transition overlay survive as an invisible UI blocker.
+                // TransitionInProgress already prevents double navigation.
+                fadeImage.raycastTarget = false;
 
                 var rect = imageObject.GetComponent<RectTransform>();
                 rect.anchorMin = Vector2.zero;

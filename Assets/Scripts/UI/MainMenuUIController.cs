@@ -55,101 +55,29 @@ namespace ARtiGraf.UI
             Button[] buttons = { mulaiBelajarButton, petunjukButton, quizButton, tentangButton, keluarButton };
             for (int i = 0; i < buttons.Length; i++)
             {
-                if (buttons[i] != null)
-                {
-                    ApplyButtonSize(buttons[i]);
-                    _originalButtonScales[i] = buttons[i].transform.localScale;
-                    AddButtonListeners(buttons[i], i);
-                }
+                if (buttons[i] == null) continue;
+
+                ApplyButtonSize(buttons[i]);
+                _originalButtonScales[i] = buttons[i].transform.localScale;
+
+                // Pakai ButtonAnimator agar onClick tidak terblokir.
+                // EventTrigger menggantikan IPointerClickHandler dari Button
+                // sehingga onClick tidak pernah dipanggil di Android.
+                ButtonAnimator anim = buttons[i].GetComponent<ButtonAnimator>();
+                if (anim == null)
+                    anim = buttons[i].gameObject.AddComponent<ButtonAnimator>();
+
+                // Hapus EventTrigger lama jika ada (dari iterasi scene sebelumnya)
+                EventTrigger oldTrigger = buttons[i].GetComponent<EventTrigger>();
+                if (oldTrigger != null)
+                    Destroy(oldTrigger);
             }
 
             if (titleText != null)
-            {
                 _originalTitleColor = titleText.color;
-            }
         }
 
-        private void AddButtonListeners(Button button, int index)
-        {
-            EventTrigger trigger = button.gameObject.GetComponent<EventTrigger>();
-            if (trigger == null)
-            {
-                trigger = button.gameObject.AddComponent<EventTrigger>();
-            }
-
-            if (trigger.triggers == null)
-            {
-                trigger.triggers = new System.Collections.Generic.List<EventTrigger.Entry>();
-            }
-
-            var hoverEntry = new EventTrigger.Entry { eventID = EventTriggerType.PointerEnter };
-            hoverEntry.callback.AddListener((data) => OnButtonHover(button));
-            trigger.triggers.Add(hoverEntry);
-
-            var exitEntry = new EventTrigger.Entry { eventID = EventTriggerType.PointerExit };
-            exitEntry.callback.AddListener((data) => OnButtonExit(button, index));
-            trigger.triggers.Add(exitEntry);
-
-            var downEntry = new EventTrigger.Entry { eventID = EventTriggerType.PointerDown };
-            downEntry.callback.AddListener((data) => OnButtonPress(button));
-            trigger.triggers.Add(downEntry);
-
-            var upEntry = new EventTrigger.Entry { eventID = EventTriggerType.PointerUp };
-            upEntry.callback.AddListener((data) => OnButtonRelease(button, index));
-            trigger.triggers.Add(upEntry);
-        }
-
-        private void OnButtonHover(Button button)
-        {
-            StopAllCoroutines();
-            StartCoroutine(ScaleButton(button.transform, buttonHoverScale));
-            PlayHoverSound();
-        }
-
-        private void OnButtonExit(Button button, int index)
-        {
-            if (index < _originalButtonScales.Length)
-            {
-                StartCoroutine(ScaleButton(button.transform, _originalButtonScales[index].x));
-            }
-        }
-
-        private void OnButtonPress(Button button)
-        {
-            StopAllCoroutines();
-            StartCoroutine(ScaleButton(button.transform, buttonPressScale));
-        }
-
-        private void OnButtonRelease(Button button, int index)
-        {
-            if (index < _originalButtonScales.Length)
-            {
-                StartCoroutine(ScaleButton(button.transform, _originalButtonScales[index].x));
-            }
-        }
-
-        private IEnumerator ScaleButton(Transform buttonTransform, float targetScale)
-        {
-            Vector3 startScale = buttonTransform.localScale;
-            Vector3 endScale = Vector3.one * targetScale;
-            float elapsed = 0f;
-
-            while (elapsed < transitionDuration)
-            {
-                elapsed += Time.deltaTime;
-                float t = elapsed / transitionDuration;
-                float smoothT = SmoothTween(t);
-                buttonTransform.localScale = Vector3.Lerp(startScale, endScale, smoothT);
-                yield return null;
-            }
-
-            buttonTransform.localScale = endScale;
-        }
-
-        private float SmoothTween(float t)
-        {
-            return t * t * (3f - 2f * t);
-        }
+        private float SmoothTween(float t) => t * t * (3f - 2f * t);
 
         private void StartTitleAnimation()
         {
@@ -287,7 +215,8 @@ namespace ARtiGraf.UI
             fadeImageObj.transform.SetParent(fadeObj.transform);
             Image img = fadeImageObj.AddComponent<Image>();
             img.color = new Color(0, 0, 0, 0);
-            img.raycastTarget = true;
+            // Fade visual only; never block button input if the transition object survives a frame.
+            img.raycastTarget = false;
 
             RectTransform rect = fadeImageObj.GetComponent<RectTransform>();
             rect.anchorMin = Vector2.zero;

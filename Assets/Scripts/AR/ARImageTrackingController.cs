@@ -81,6 +81,7 @@ namespace ARtiGraf.AR
         [SerializeField] float autofocusCooldownSeconds = 0.45f;
         [SerializeField] float autofocusRestoreDelaySeconds = 0.35f;
         [SerializeField] bool restoreFlashOffOnExit = true;
+        [SerializeField] float quizHuntAutoReturnDelaySeconds = 0f;
 
         [Header("Interaction Controllers")]
         [SerializeField] ARTouchInteractionController touchController;
@@ -102,7 +103,7 @@ namespace ARtiGraf.AR
         [Header("Placement")]
         [SerializeField] bool normalizeSpawnedContentPivot = true;
         [SerializeField] Vector3 imageTargetContentOffset = new Vector3(0f, 0.035f, 0f);
-        
+
         [Header("Barcode Flashcard Settings")]
         [Tooltip("If the QR code is on the back of a flashcard, flip the 3D object to appear on the front side.")]
         [SerializeField] bool flipBarcodeContentToFront = true;
@@ -913,18 +914,23 @@ namespace ARtiGraf.AR
 
             quizHuntScanResultSent = true;
             AppSession.SetQuizHuntScanResult(content.Id);
-            contentController?.SetStatus("Kartu terbaca. Kembali ke Quiz Hunt untuk cek jawaban...");
+            contentController?.SetStatus("Kartu terbaca. Objek bisa diputar, digeser, dan zoom. Tekan Kembali untuk cek jawaban.");
 
             if (quizHuntReturnRoutine != null)
             {
                 StopCoroutine(quizHuntReturnRoutine);
+                quizHuntReturnRoutine = null;
             }
-            quizHuntReturnRoutine = StartCoroutine(ReturnToQuizHuntAfterDelay());
+
+            if (quizHuntAutoReturnDelaySeconds > 0f)
+            {
+                quizHuntReturnRoutine = StartCoroutine(ReturnToQuizHuntAfterDelay());
+            }
         }
 
         IEnumerator ReturnToQuizHuntAfterDelay()
         {
-            yield return new WaitForSecondsRealtime(0.75f);
+            yield return new WaitForSecondsRealtime(quizHuntAutoReturnDelaySeconds);
 
             SceneNavigationController navigator = FindAnyObjectByType<SceneNavigationController>(FindObjectsInactive.Include);
             if (navigator != null)

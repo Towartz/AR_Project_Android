@@ -1970,6 +1970,11 @@ MonoBehaviour:
   enableTimer: 1
   shuffleQuestionOrder: 1
   shuffleAnswerOrder: 1
+  sfxAudioSource: {fileID: 0}
+  correctSfx: {fileID: 0}
+  correctSfxVolume: 0.95
+  wrongSfx: {fileID: 0}
+  wrongSfxVolume: 0.9
 --- !u!114 &1755212969
 MonoBehaviour:
   m_ObjectHideFlags: 0

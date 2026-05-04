@@ -1393,7 +1393,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1414226055}
         m_TargetAssemblyTypeName: ARtiGraf.Core.SceneNavigationController, Assembly-CSharp
-        m_MethodName: OpenMaterialSelect
+        m_MethodName: OpenARBackDestination
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2809,6 +2809,9 @@ MonoBehaviour:
   discoveryEffectDuration: 1.75
   discoveryEffectColor: {r: 1, g: 0.78, b: 0.16, a: 0.92}
   discoveryTitle: Baru ditemukan!
+  sfxAudioSource: {fileID: 0}
+  firstScanSfx: {fileID: 0}
+  firstScanSfxVolume: 0.38
   quizButton: {fileID: 1658373994}
   quizButtonLabel: {fileID: 420130534}
   infoButton: {fileID: 1143630975}

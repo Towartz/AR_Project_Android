@@ -39,6 +39,7 @@ namespace ARtiGraf.AR
         readonly List<TouchSample> touchBuffer = new List<TouchSample>(4);
         readonly List<TouchSample> interactionTouchBuffer = new List<TouchSample>(4);
         readonly List<RaycastResult> uiRaycastResults = new List<RaycastResult>(8);
+        readonly HashSet<int> uiBlockedFingerIds = new HashSet<int>();
 
         float previousPinchDistance = -1f;
         Vector2 previousTwoFingerMidpoint = new Vector2(float.NaN, float.NaN);
@@ -246,6 +247,28 @@ namespace ARtiGraf.AR
         {
             touchBuffer.Clear();
 
+#if ENABLE_LEGACY_INPUT_MANAGER
+            // On Android builds the legacy touch API is the most stable path when
+            // the project runs with "Both" input backends. EnhancedTouch can report
+            // touches late on some devices, which makes AR gestures feel dead.
+            for (int i = 0; i < Input.touchCount; i++)
+            {
+                UnityEngine.Touch touch = Input.GetTouch(i);
+                touchBuffer.Add(new TouchSample
+                {
+                    FingerId = touch.fingerId,
+                    Position = touch.position,
+                    DeltaPosition = touch.deltaPosition,
+                    Phase = touch.phase
+                });
+            }
+
+            if (touchBuffer.Count > 0)
+            {
+                return;
+            }
+#endif
+
 #if ENABLE_INPUT_SYSTEM
             if (enhancedTouchEnabled)
             {
@@ -268,20 +291,6 @@ namespace ARtiGraf.AR
             {
                 return;
             }
-
-#if ENABLE_LEGACY_INPUT_MANAGER
-            for (int i = 0; i < Input.touchCount; i++)
-            {
-                UnityEngine.Touch touch = Input.GetTouch(i);
-                touchBuffer.Add(new TouchSample
-                {
-                    FingerId = touch.fingerId,
-                    Position = touch.position,
-                    DeltaPosition = touch.deltaPosition,
-                    Phase = touch.phase
-                });
-            }
-#endif
         }
 
         void FilterInteractionTouches()
@@ -290,9 +299,28 @@ namespace ARtiGraf.AR
             for (int i = 0; i < touchBuffer.Count; i++)
             {
                 TouchSample touch = touchBuffer[i];
-                if (!IsTouchOverBlockingUi(touch.Position))
+
+                if (touch.Phase == TouchPhase.Began)
+                {
+                    if (IsTouchOverBlockingUi(touch.Position))
+                    {
+                        uiBlockedFingerIds.Add(touch.FingerId);
+                    }
+                    else
+                    {
+                        uiBlockedFingerIds.Remove(touch.FingerId);
+                    }
+                }
+
+                bool blockedByUi = uiBlockedFingerIds.Contains(touch.FingerId);
+                if (!blockedByUi)
                 {
                     interactionTouchBuffer.Add(touch);
+                }
+
+                if (touch.Phase == TouchPhase.Ended || touch.Phase == TouchPhase.Canceled)
+                {
+                    uiBlockedFingerIds.Remove(touch.FingerId);
                 }
             }
         }
@@ -359,6 +387,7 @@ namespace ARtiGraf.AR
             singleTouchStartPosition = Vector2.zero;
             singleTouchStartTime = -1f;
             singleTouchMoved = false;
+            uiBlockedFingerIds.Clear();
         }
 
         void EnableTouchBackendIfNeeded()

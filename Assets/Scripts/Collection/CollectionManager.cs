@@ -256,16 +256,18 @@ namespace ARtiGraf.Collection
             float height = Mathf.Max(480f, size.y);
             bool compact = Mathf.Min(width, height) < 760f;
 
-            float scrollMinX = portrait ? (compact ? 0.035f : 0.06f) : 0.10f;
-            float scrollMaxX = portrait ? (compact ? 0.965f : 0.94f) : 0.90f;
-            int columns = portrait
-                ? (width < 430f ? 2 : width < 900f ? 3 : 4)
-                : (width < 900f ? 4 : 5);
+            float scrollMinX = portrait ? 0.19f : 0.126f;
+            float scrollMaxX = portrait ? 0.81f : 0.873f;
+            float scrollMinY = portrait ? 0.13f : 0.128f;
+            float scrollMaxY = portrait ? 0.78f : 0.742f;
+            int columns = portrait ? 4 : 7;
             float usableWidth = width * (scrollMaxX - scrollMinX);
-            float spacingX = portrait ? Mathf.Clamp(width * 0.02f, 10f, 22f) : Mathf.Clamp(width * 0.014f, 14f, 26f);
-            float pad = portrait ? Mathf.Clamp(width * 0.035f, 12f, 28f) : Mathf.Clamp(width * 0.03f, 18f, 34f);
-            float cellWidth = (usableWidth - pad * 2f - spacingX * (columns - 1)) / columns;
-            float cellHeight = cellWidth * 1.36f;
+            float spacingX = portrait ? Mathf.Clamp(width * 0.014f, 8f, 16f) : Mathf.Clamp(width * 0.016f, 20f, 30f);
+            float spacingY = portrait ? Mathf.Clamp(height * 0.008f, 8f, 15f) : Mathf.Clamp(height * 0.015f, 10f, 16f);
+            float padX = portrait ? Mathf.Clamp(width * 0.018f, 8f, 18f) : Mathf.Clamp(width * 0.028f, 36f, 52f);
+            float padY = portrait ? Mathf.Clamp(width * 0.018f, 8f, 18f) : Mathf.Clamp(height * 0.012f, 8f, 14f);
+            float cellWidth = (usableWidth - padX * 2f - spacingX * (columns - 1)) / columns;
+            float cellHeight = portrait ? cellWidth * 1.30f : cellWidth * 0.92f;
 
             GridLayoutGroup grid = collectionGrid.GetComponent<GridLayoutGroup>();
             if (grid != null)
@@ -274,9 +276,10 @@ namespace ARtiGraf.Collection
                 grid.constraintCount = columns;
                 grid.childAlignment = TextAnchor.UpperCenter;
                 grid.cellSize = new Vector2(cellWidth, cellHeight);
-                grid.spacing = new Vector2(spacingX, portrait ? Mathf.Clamp(height * 0.012f, 12f, 24f) : 18f);
-                int padding = Mathf.RoundToInt(pad);
-                grid.padding = new RectOffset(padding, padding, padding, padding + 4);
+                grid.spacing = new Vector2(spacingX, spacingY);
+                int paddingX = Mathf.RoundToInt(padX);
+                int paddingY = Mathf.RoundToInt(padY);
+                grid.padding = new RectOffset(paddingX, paddingX, paddingY, paddingY + 4);
             }
 
             ScrollRect scroll = collectionGrid.GetComponentInParent<ScrollRect>();
@@ -284,23 +287,28 @@ namespace ARtiGraf.Collection
             if (scrollRect != null)
             {
                 SetAnchors(scrollRect,
-                    portrait ? new Vector2(scrollMinX, compact ? 0.055f : 0.07f) : new Vector2(scrollMinX, 0.08f),
-                    portrait ? new Vector2(scrollMaxX, 0.78f) : new Vector2(scrollMaxX, 0.80f));
+                    new Vector2(scrollMinX, scrollMinY),
+                    new Vector2(scrollMaxX, scrollMaxY));
             }
 
             Image scrollImage = scroll != null ? scroll.GetComponent<Image>() : null;
             if (scrollImage != null)
-                scrollImage.color = new Color(1f, 1f, 1f, portrait ? 0.08f : 0.10f);
+                scrollImage.color = new Color(1f, 1f, 1f, 0f);
 
             RectTransform counterRect = totalDiscoveredText != null ? totalDiscoveredText.rectTransform : null;
             SetAnchors(counterRect,
-                portrait ? new Vector2(0.12f, 0.82f) : new Vector2(0.25f, 0.84f),
-                portrait ? new Vector2(0.88f, 0.87f) : new Vector2(0.75f, 0.89f));
-            ConfigureText(totalDiscoveredText, portrait ? 30 : 30, compact ? 16 : 17, TextAnchor.MiddleCenter);
+                portrait ? new Vector2(0.31f, 0.807f) : new Vector2(0.355f, 0.747f),
+                portrait ? new Vector2(0.69f, 0.846f) : new Vector2(0.645f, 0.812f));
+            ConfigureText(totalDiscoveredText, portrait ? 24 : 26, compact ? 14 : 16, TextAnchor.MiddleCenter);
         }
 
         Vector2 ResolveCanvasSize()
         {
+            ResponsiveArtworkFrame frame = collectionGrid != null ? collectionGrid.GetComponentInParent<ResponsiveArtworkFrame>() : null;
+            RectTransform frameRect = frame != null ? frame.GetComponent<RectTransform>() : null;
+            if (frameRect != null && frameRect.rect.width > 1f && frameRect.rect.height > 1f)
+                return new Vector2(frameRect.rect.width, frameRect.rect.height);
+
             Canvas canvas = collectionGrid != null ? collectionGrid.GetComponentInParent<Canvas>() : null;
             RectTransform canvasRect = canvas != null ? canvas.GetComponent<RectTransform>() : null;
             if (canvasRect != null && canvasRect.rect.width > 1f && canvasRect.rect.height > 1f)

@@ -18,8 +18,6 @@ namespace ARtiGraf.Collection
         [SerializeField] Text questionMarkText;
         [SerializeField] GameObject starBadge;
         [SerializeField] GameObject discoveredBadge;
-        [SerializeField] Color undiscoveredColor = new Color(0.2f, 0.2f, 0.2f, 0.85f);
-        [SerializeField] string lockedLabel = "Terkunci";
 
         MaterialContentData linkedContent;
         bool isDiscovered;
@@ -29,6 +27,13 @@ namespace ARtiGraf.Collection
             linkedContent = content;
             isDiscovered = discovered;
             EnsureReferences();
+
+            Image cardImage = GetComponent<Image>();
+            if (cardImage != null)
+            {
+                cardImage.color = discovered ? new Color(1f, 1f, 1f, 0.94f) : new Color(1f, 1f, 1f, 0f);
+                cardImage.raycastTarget = discovered;
+            }
 
             if (thumbnailImage != null)
             {
@@ -40,27 +45,27 @@ namespace ARtiGraf.Collection
                 else
                 {
                     thumbnailImage.sprite = null;
-                    thumbnailImage.color = undiscoveredColor;
-                    thumbnailImage.preserveAspect = true;
-                    thumbnailImage.gameObject.SetActive(true);
+                    thumbnailImage.color = new Color(1f, 1f, 1f, 0f);
+                    thumbnailImage.gameObject.SetActive(false);
                 }
             }
 
             if (silhouetteOverlay != null)
             {
-                silhouetteOverlay.gameObject.SetActive(!discovered);
+                silhouetteOverlay.gameObject.SetActive(false);
                 silhouetteOverlay.raycastTarget = false;
             }
 
             if (itemNameText != null)
             {
-                itemNameText.text = discovered && content != null ? content.Title : lockedLabel;
+                itemNameText.text = discovered && content != null ? content.Title : string.Empty;
+                itemNameText.gameObject.SetActive(discovered);
                 BuhenARTextStyle.Configure(itemNameText, 26, 16, TextAnchor.MiddleCenter, VerticalWrapMode.Truncate, 1.06f);
             }
 
             if (questionMarkText != null)
             {
-                questionMarkText.gameObject.SetActive(!discovered);
+                questionMarkText.gameObject.SetActive(false);
                 BuhenARTextStyle.Configure(questionMarkText, 58, 28, TextAnchor.MiddleCenter, VerticalWrapMode.Truncate, 1f);
             }
 
